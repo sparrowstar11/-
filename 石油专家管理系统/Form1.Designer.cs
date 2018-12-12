@@ -86,6 +86,7 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -118,7 +119,7 @@
             this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(32, 22);
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(39, 24);
             this.toolStripSplitButton1.Text = "toolStripSplitButton1";
             // 
             // 退出系统ToolStripMenuItem
@@ -127,7 +128,7 @@
             this.退出系统ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("退出系统ToolStripMenuItem.Image")));
             this.退出系统ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 1, 1, 0);
             this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
             // 
             // 注册ToolStripMenuItem
@@ -136,7 +137,7 @@
             this.注册ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("注册ToolStripMenuItem.Image")));
             this.注册ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 1, 1, 0);
             this.注册ToolStripMenuItem.Name = "注册ToolStripMenuItem";
-            this.注册ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.注册ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.注册ToolStripMenuItem.Text = "注册";
             // 
             // 登录ToolStripMenuItem
@@ -145,7 +146,7 @@
             this.登录ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("登录ToolStripMenuItem.Image")));
             this.登录ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 1, 1, 0);
             this.登录ToolStripMenuItem.Name = "登录ToolStripMenuItem";
-            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.登录ToolStripMenuItem.Text = "登录";
             // 
             // 系统
@@ -154,7 +155,7 @@
             this.系统.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.系统.Margin = new System.Windows.Forms.Padding(10, 3, 5, 2);
             this.系统.Name = "系统";
-            this.系统.Size = new System.Drawing.Size(58, 20);
+            this.系统.Size = new System.Drawing.Size(58, 22);
             this.系统.Text = "系统(S)";
             this.系统.Click += new System.EventHandler(this.系统_Click);
             this.系统.MouseEnter += new System.EventHandler(this.系统_MouseEnter);
@@ -165,14 +166,14 @@
             this.toolStripSeparator1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(1, 1, 7, 0);
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 24);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 26);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripLabel2.Margin = new System.Windows.Forms.Padding(0, 3, 5, 2);
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(60, 20);
+            this.toolStripLabel2.Size = new System.Drawing.Size(60, 22);
             this.toolStripLabel2.Text = "功能(U)";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             this.toolStripLabel2.MouseEnter += new System.EventHandler(this.toolStripLabel2_MouseEnter);
@@ -182,14 +183,14 @@
             // 
             this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(0, 3, 5, 2);
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(61, 20);
+            this.toolStripLabel1.Size = new System.Drawing.Size(61, 22);
             this.toolStripLabel1.Text = "帮助(H)";
             this.toolStripLabel1.MouseEnter += new System.EventHandler(this.toolStripLabel1_MouseEnter);
             this.toolStripLabel1.MouseLeave += new System.EventHandler(this.toolStripLabel1_MouseLeave);
@@ -197,6 +198,7 @@
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1,
             this.系统,
@@ -206,7 +208,7 @@
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1332, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1332, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
@@ -228,6 +230,7 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -622,11 +625,20 @@
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(0, 25);
+            this.splitter1.Location = new System.Drawing.Point(0, 27);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 685);
+            this.splitter1.Size = new System.Drawing.Size(3, 683);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(544, 166);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "棋哥太帅了";
             // 
             // Form1
             // 
@@ -650,6 +662,7 @@
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -720,7 +733,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox1;
-
+        private System.Windows.Forms.Label label1;
     }
 }
 
