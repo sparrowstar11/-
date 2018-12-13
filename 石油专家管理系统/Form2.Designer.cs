@@ -153,7 +153,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(842, 599);
+            this.tabControl1.Size = new System.Drawing.Size(844, 619);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
@@ -177,10 +177,10 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(834, 573);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(836, 593);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "基础数据";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -224,7 +224,7 @@
             // 
             this.button11.BackColor = System.Drawing.Color.AliceBlue;
             this.button11.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button11.Location = new System.Drawing.Point(-2, 535);
+            this.button11.Location = new System.Drawing.Point(4, 535);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(104, 33);
             this.button11.TabIndex = 25;
@@ -787,7 +787,7 @@
             this.tabPage2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(834, 573);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "钻具组合";
@@ -806,7 +806,7 @@
             this.tabPage7.Font = new System.Drawing.Font("微软雅黑 Light", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage7.Location = new System.Drawing.Point(4, 34);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(198, 450);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "钻具组合图";
@@ -1035,8 +1035,8 @@
             this.tabPage3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(834, 589);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(834, 573);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "井轨数据";
             // 
@@ -1052,7 +1052,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(3, 3);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(824, 579);
+            this.groupBox8.Size = new System.Drawing.Size(824, 563);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             // 
@@ -1137,8 +1137,8 @@
             this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage4.Size = new System.Drawing.Size(834, 589);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(834, 573);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "井身结构参数";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1151,7 +1151,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(828, 583);
+            this.dataGridView3.Size = new System.Drawing.Size(828, 567);
             this.dataGridView3.TabIndex = 0;
             // 
             // tabPage5
@@ -1159,8 +1159,8 @@
             this.tabPage5.Controls.Add(this.textBox10);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage5.Size = new System.Drawing.Size(834, 589);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(834, 573);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "溢流情况描述";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1171,14 +1171,14 @@
             this.textBox10.Location = new System.Drawing.Point(3, 3);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(828, 583);
+            this.textBox10.Size = new System.Drawing.Size(828, 567);
             this.textBox10.TabIndex = 0;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 599);
+            this.ClientSize = new System.Drawing.Size(844, 619);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
