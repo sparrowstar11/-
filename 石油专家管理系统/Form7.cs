@@ -40,5 +40,13 @@ namespace 石油专家管理系统
         {
 
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form8 form = new Form8();
+            form.ShowDialog();
+            this.Close();
+            this.Dispose();
+        }
     }
 }
