@@ -210,6 +210,12 @@ namespace 石油专家管理系统
         {
 
         }
+
+        private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+        }
     }
 }
 
