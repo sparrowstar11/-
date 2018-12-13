@@ -186,11 +186,7 @@ namespace 石油专家管理系统
             {
                 if (treeView1.SelectedNode.Name == "工程师法")
                 {
-                    Form3 Form = new Form3();
-                    this.Hide();
-                    Form.ShowDialog();
-                    this.Close();
-                    this.Dispose();
+                    
                 }
             }
 

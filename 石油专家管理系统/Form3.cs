@@ -5,9 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace 石油专家管理系统
+namespace Newp
 {
     public partial class Form3 : Form
     {
@@ -16,13 +17,9 @@ namespace 石油专家管理系统
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
-            Form1 Form = new Form1();
-            this.Hide();
-            Form.ShowDialog();
-            this.Close();
-            this.Dispose();
+
         }
     }
 }

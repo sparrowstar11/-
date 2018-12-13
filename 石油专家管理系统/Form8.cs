@@ -15,5 +15,10 @@ namespace 石油专家管理系统
         {
             InitializeComponent();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
