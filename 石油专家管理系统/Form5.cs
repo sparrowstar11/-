@@ -299,5 +299,12 @@ namespace Newp
         {
 
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            this.Dispose();
+        }
     }
 }

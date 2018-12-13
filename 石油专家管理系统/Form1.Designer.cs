@@ -56,6 +56,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -86,7 +87,6 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.button2 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -128,8 +128,9 @@
             this.退出系统ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("退出系统ToolStripMenuItem.Image")));
             this.退出系统ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 1, 1, 0);
             this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
+            this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
             // 注册ToolStripMenuItem
             // 
@@ -137,7 +138,7 @@
             this.注册ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("注册ToolStripMenuItem.Image")));
             this.注册ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 1, 1, 0);
             this.注册ToolStripMenuItem.Name = "注册ToolStripMenuItem";
-            this.注册ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.注册ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.注册ToolStripMenuItem.Text = "注册";
             // 
             // 登录ToolStripMenuItem
@@ -146,7 +147,7 @@
             this.登录ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("登录ToolStripMenuItem.Image")));
             this.登录ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 1, 1, 0);
             this.登录ToolStripMenuItem.Name = "登录ToolStripMenuItem";
-            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.登录ToolStripMenuItem.Text = "登录";
             // 
             // 系统
@@ -221,11 +222,11 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(1, 30);
+            this.tabControl1.Location = new System.Drawing.Point(1, 27);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1264, 484);
+            this.tabControl1.Size = new System.Drawing.Size(1264, 487);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -240,11 +241,20 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(19, 6, 4, 0);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.tabPage1.Size = new System.Drawing.Size(1256, 455);
+            this.tabPage1.Size = new System.Drawing.Size(1256, 458);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Tag = "新建";
             this.tabPage1.Text = "项目管理";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(860, 158);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -323,7 +333,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(29, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(11, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1256, 455);
+            this.tabPage2.Size = new System.Drawing.Size(1256, 458);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "基础数据维护";
             // 
@@ -400,7 +410,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1256, 455);
+            this.tabPage3.Size = new System.Drawing.Size(1256, 458);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "基础计算";
             // 
@@ -665,15 +675,6 @@
             this.splitter1.Size = new System.Drawing.Size(3, 683);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(860, 158);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
