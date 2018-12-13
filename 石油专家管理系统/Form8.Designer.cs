@@ -40,6 +40,8 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,17 +163,41 @@
             this.radioButton2.Text = "否";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.AliceBlue;
+            this.button10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button10.Location = new System.Drawing.Point(196, 266);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(78, 33);
+            this.button10.TabIndex = 18;
+            this.button10.Text = "上一步";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.AliceBlue;
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(300, 266);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 33);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "下一步";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(390, 288);
+            this.ClientSize = new System.Drawing.Size(393, 311);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form8";
-            this.Text = "Form8";
+            this.Text = "溢流数据";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -193,5 +219,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button1;
     }
 }
