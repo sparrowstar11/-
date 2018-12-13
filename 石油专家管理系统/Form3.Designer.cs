@@ -42,18 +42,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(127, 36);
+            this.label1.Location = new System.Drawing.Point(149, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 20);
+            this.label1.Size = new System.Drawing.Size(51, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "井 号";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(189, 36);
+            this.comboBox1.Location = new System.Drawing.Point(249, 44);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 20);
+            this.comboBox1.Size = new System.Drawing.Size(172, 23);
             this.comboBox1.TabIndex = 1;
             // 
             // dataGridView1
@@ -61,19 +63,21 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(48, 86);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(568, 253);
+            this.dataGridView1.Size = new System.Drawing.Size(761, 316);
             this.dataGridView1.TabIndex = 2;
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.AliceBlue;
             this.button3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(368, 32);
+            this.button3.Location = new System.Drawing.Point(582, 34);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 31);
+            this.button3.Size = new System.Drawing.Size(105, 39);
             this.button3.TabIndex = 7;
             this.button3.Text = "查询";
             this.button3.UseVisualStyleBackColor = false;
@@ -82,9 +86,10 @@
             // 
             this.button4.BackColor = System.Drawing.Color.AliceBlue;
             this.button4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(313, 330);
+            this.button4.Location = new System.Drawing.Point(417, 412);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 31);
+            this.button4.Size = new System.Drawing.Size(105, 39);
             this.button4.TabIndex = 9;
             this.button4.Text = "编辑";
             this.button4.UseVisualStyleBackColor = false;
@@ -93,19 +98,20 @@
             // 
             this.button5.BackColor = System.Drawing.Color.AliceBlue;
             this.button5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5.Location = new System.Drawing.Point(441, 330);
+            this.button5.Location = new System.Drawing.Point(582, 410);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(79, 31);
+            this.button5.Size = new System.Drawing.Size(105, 39);
             this.button5.TabIndex = 10;
             this.button5.Text = "关闭";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(568, 373);
+            this.ClientSize = new System.Drawing.Size(822, 466);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -114,6 +120,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
             this.Text = "已有井";
             this.Load += new System.EventHandler(this.Form3_Load);

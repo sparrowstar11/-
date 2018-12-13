@@ -30,20 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("可能法");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("工程师法");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("边循环边加重法");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("常规压井方法", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("直推法");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("置换法");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("平衡点法");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("非常规压井方法", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("可能法");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("工程师法");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("边循环边加重法");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("常规压井方法", new System.Windows.Forms.TreeNode[] {
             treeNode5,
             treeNode6,
-            treeNode7});
+            treeNode13});
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("直推法");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("置换法");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("平衡点法");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("非常规压井方法", new System.Windows.Forms.TreeNode[] {
+            treeNode15,
+            treeNode16,
+            treeNode17});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("新建");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("打开");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("已有井选择");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("新建");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("新建");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("打开");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("标准查询");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("案例更新");
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.注册ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +94,20 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button2 = new System.Windows.Forms.Button();
+            this.treeView2 = new System.Windows.Forms.TreeView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.treeView3 = new System.Windows.Forms.TreeView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.treeView4 = new System.Windows.Forms.TreeView();
+            this.button5 = new System.Windows.Forms.Button();
+            this.treeView5 = new System.Windows.Forms.TreeView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -222,17 +243,19 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(1, 28);
+            this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1264, 488);
+            this.tabControl1.Size = new System.Drawing.Size(1335, 670);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage1.Controls.Add(this.panel6);
+            this.tabPage1.Controls.Add(this.treeView2);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -241,7 +264,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(19, 6, 4, 0);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.tabPage1.Size = new System.Drawing.Size(1256, 459);
+            this.tabPage1.Size = new System.Drawing.Size(1327, 641);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Tag = "新建";
             this.tabPage1.Text = "项目管理";
@@ -255,11 +278,11 @@
             this.groupBox2.Controls.Add(this.pictureBox3);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 0);
+            this.groupBox2.Location = new System.Drawing.Point(5, 2);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(373, 220);
+            this.groupBox2.Size = new System.Drawing.Size(1315, 109);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "项目管理";
@@ -267,7 +290,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(184, 49);
+            this.pictureBox1.Location = new System.Drawing.Point(189, 24);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
@@ -281,7 +304,7 @@
             this.textBox2.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(184, 111);
+            this.textBox2.Location = new System.Drawing.Point(189, 78);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -293,13 +316,14 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(37, 49);
+            this.pictureBox3.Location = new System.Drawing.Point(53, 24);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(84, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
             // 
             // textBox1
@@ -307,7 +331,7 @@
             this.textBox1.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(24, 111);
+            this.textBox1.Location = new System.Drawing.Point(37, 78);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(109, 20);
@@ -319,12 +343,15 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Controls.Add(this.treeView3);
+            this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(29, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(11, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1256, 459);
+            this.tabPage2.Size = new System.Drawing.Size(1327, 641);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "基础数据维护";
             // 
@@ -335,11 +362,11 @@
             this.groupBox3.Controls.Add(this.textBox3);
             this.groupBox3.Controls.Add(this.pictureBox2);
             this.groupBox3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox3.Location = new System.Drawing.Point(13, 0);
+            this.groupBox3.Location = new System.Drawing.Point(5, 2);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(379, 226);
+            this.groupBox3.Size = new System.Drawing.Size(1315, 109);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "基础数据维护";
@@ -347,13 +374,14 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(187, 49);
+            this.pictureBox4.Location = new System.Drawing.Point(189, 24);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(84, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             this.pictureBox4.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
             // 
             // textBox4
@@ -361,7 +389,7 @@
             this.textBox4.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox4.Location = new System.Drawing.Point(159, 105);
+            this.textBox4.Location = new System.Drawing.Point(166, 78);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(133, 20);
@@ -374,7 +402,7 @@
             this.textBox3.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(24, 105);
+            this.textBox3.Location = new System.Drawing.Point(42, 78);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(109, 20);
@@ -385,7 +413,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(35, 49);
+            this.pictureBox2.Location = new System.Drawing.Point(53, 24);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(84, 50);
@@ -401,18 +429,21 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1256, 459);
+            this.tabPage3.Size = new System.Drawing.Size(1327, 641);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "基础计算";
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage4.Controls.Add(this.panel3);
+            this.tabPage4.Controls.Add(this.treeView4);
+            this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1256, 459);
+            this.tabPage4.Size = new System.Drawing.Size(1327, 641);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "光象系统方法计算";
             // 
@@ -424,11 +455,11 @@
             this.groupBox4.Controls.Add(this.pictureBox6);
             this.groupBox4.Controls.Add(this.textBox5);
             this.groupBox4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox4.Location = new System.Drawing.Point(8, 2);
+            this.groupBox4.Location = new System.Drawing.Point(5, 2);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(369, 218);
+            this.groupBox4.Size = new System.Drawing.Size(1315, 109);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "光象系统计算方法";
@@ -436,7 +467,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(43, 38);
+            this.pictureBox5.Location = new System.Drawing.Point(53, 24);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(84, 50);
@@ -450,7 +481,7 @@
             this.textBox6.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox6.Location = new System.Drawing.Point(205, 108);
+            this.textBox6.Location = new System.Drawing.Point(189, 78);
             this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
@@ -461,7 +492,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(205, 38);
+            this.pictureBox6.Location = new System.Drawing.Point(189, 24);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 50);
@@ -475,7 +506,7 @@
             this.textBox5.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox5.Location = new System.Drawing.Point(23, 108);
+            this.textBox5.Location = new System.Drawing.Point(32, 78);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(129, 20);
@@ -486,12 +517,13 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage5.Controls.Add(this.panel4);
             this.tabPage5.Controls.Add(this.groupBox1);
             this.tabPage5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1256, 459);
+            this.tabPage5.Size = new System.Drawing.Size(1327, 641);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "基本压井计算";
             // 
@@ -504,7 +536,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(343, 438);
+            this.groupBox1.Size = new System.Drawing.Size(267, 622);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "基本压井计算";
@@ -515,11 +547,11 @@
             this.button1.BackColor = System.Drawing.Color.CadetBlue;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(5, 34);
+            this.button1.Location = new System.Drawing.Point(5, 24);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(263, 29);
+            this.button1.Size = new System.Drawing.Size(229, 39);
             this.button1.TabIndex = 4;
             this.button1.Text = "基本压井计算";
             this.button1.UseVisualStyleBackColor = false;
@@ -531,43 +563,43 @@
             this.treeView1.Location = new System.Drawing.Point(5, 60);
             this.treeView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView1.Name = "treeView1";
-            treeNode1.BackColor = System.Drawing.Color.Transparent;
-            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode1.Name = "节点1";
-            treeNode1.Text = "可能法";
-            treeNode2.BackColor = System.Drawing.Color.Transparent;
-            treeNode2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode2.Name = "工程师法";
-            treeNode2.Text = "工程师法";
-            treeNode3.BackColor = System.Drawing.Color.Transparent;
-            treeNode3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode3.Name = "节点3";
-            treeNode3.Text = "边循环边加重法";
-            treeNode4.BackColor = System.Drawing.Color.Silver;
-            treeNode4.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode4.Name = "常规压井方法";
-            treeNode4.Text = "常规压井方法";
             treeNode5.BackColor = System.Drawing.Color.Transparent;
             treeNode5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode5.Name = "节点5";
-            treeNode5.Text = "直推法";
+            treeNode5.Name = "节点1";
+            treeNode5.Text = "可能法";
             treeNode6.BackColor = System.Drawing.Color.Transparent;
             treeNode6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode6.Name = "节点6";
-            treeNode6.Text = "置换法";
-            treeNode7.BackColor = System.Drawing.Color.Transparent;
-            treeNode7.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode7.Name = "节点7";
-            treeNode7.Text = "平衡点法";
-            treeNode8.BackColor = System.Drawing.Color.Silver;
-            treeNode8.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode8.Name = "节点4";
-            treeNode8.Text = "非常规压井方法";
+            treeNode6.Name = "工程师法";
+            treeNode6.Text = "工程师法";
+            treeNode13.BackColor = System.Drawing.Color.Transparent;
+            treeNode13.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode13.Name = "节点3";
+            treeNode13.Text = "边循环边加重法";
+            treeNode14.BackColor = System.Drawing.Color.Silver;
+            treeNode14.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode14.Name = "常规压井方法";
+            treeNode14.Text = "常规压井方法";
+            treeNode15.BackColor = System.Drawing.Color.Transparent;
+            treeNode15.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode15.Name = "节点5";
+            treeNode15.Text = "直推法";
+            treeNode16.BackColor = System.Drawing.Color.Transparent;
+            treeNode16.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode16.Name = "节点6";
+            treeNode16.Text = "置换法";
+            treeNode17.BackColor = System.Drawing.Color.Transparent;
+            treeNode17.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode17.Name = "节点7";
+            treeNode17.Text = "平衡点法";
+            treeNode18.BackColor = System.Drawing.Color.Silver;
+            treeNode18.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode18.Name = "节点4";
+            treeNode18.Text = "非常规压井方法";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode8});
+            treeNode14,
+            treeNode18});
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(263, 352);
+            this.treeView1.Size = new System.Drawing.Size(229, 530);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -581,11 +613,14 @@
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage6.Controls.Add(this.panel5);
+            this.tabPage6.Controls.Add(this.treeView5);
+            this.tabPage6.Controls.Add(this.button5);
             this.tabPage6.Controls.Add(this.groupBox5);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1256, 459);
+            this.tabPage6.Size = new System.Drawing.Size(1327, 641);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "数据库管理";
             // 
@@ -596,11 +631,11 @@
             this.groupBox5.Controls.Add(this.textBox9);
             this.groupBox5.Controls.Add(this.pictureBox9);
             this.groupBox5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox5.Location = new System.Drawing.Point(8, 2);
+            this.groupBox5.Location = new System.Drawing.Point(5, 2);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(369, 215);
+            this.groupBox5.Size = new System.Drawing.Size(1315, 109);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "数据库管理";
@@ -609,7 +644,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(193, 46);
+            this.pictureBox10.Location = new System.Drawing.Point(189, 24);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(73, 50);
@@ -623,12 +658,12 @@
             this.textBox10.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox10.Location = new System.Drawing.Point(173, 108);
+            this.textBox10.Location = new System.Drawing.Point(171, 78);
             this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(109, 20);
             this.textBox10.TabIndex = 9;
-            this.textBox10.Text = "案列更新";
+            this.textBox10.Text = "案例更新";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox9
@@ -636,7 +671,7 @@
             this.textBox9.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox9.Location = new System.Drawing.Point(36, 108);
+            this.textBox9.Location = new System.Drawing.Point(32, 78);
             this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(109, 20);
@@ -648,7 +683,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(47, 46);
+            this.pictureBox9.Location = new System.Drawing.Point(53, 24);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(84, 50);
@@ -663,18 +698,200 @@
             this.splitter1.Location = new System.Drawing.Point(0, 27);
             this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 683);
+            this.splitter1.Size = new System.Drawing.Size(3, 680);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1010, 154);
+            this.button2.BackColor = System.Drawing.Color.CadetBlue;
+            this.button2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(5, 115);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button2.Size = new System.Drawing.Size(190, 39);
             this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "项目管理";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // treeView2
+            // 
+            this.treeView2.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.treeView2.ImageIndex = 1;
+            this.treeView2.ImageList = this.imageList1;
+            this.treeView2.Location = new System.Drawing.Point(5, 158);
+            this.treeView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.treeView2.Name = "treeView2";
+            treeNode9.BackColor = System.Drawing.Color.Silver;
+            treeNode9.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode9.Name = "常规压井方法";
+            treeNode9.Text = "新建";
+            treeNode10.BackColor = System.Drawing.Color.Silver;
+            treeNode10.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode10.Name = "节点4";
+            treeNode10.Text = "打开";
+            this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode9,
+            treeNode10});
+            this.treeView2.SelectedImageIndex = 0;
+            this.treeView2.Size = new System.Drawing.Size(190, 477);
+            this.treeView2.TabIndex = 8;
+            this.treeView2.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView2_NodeMouseClick);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.CadetBlue;
+            this.button3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Location = new System.Drawing.Point(5, 115);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button3.Size = new System.Drawing.Size(190, 39);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "基础数据维护";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // treeView3
+            // 
+            this.treeView3.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.treeView3.ImageIndex = 1;
+            this.treeView3.ImageList = this.imageList1;
+            this.treeView3.Location = new System.Drawing.Point(5, 158);
+            this.treeView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.treeView3.Name = "treeView3";
+            treeNode1.BackColor = System.Drawing.Color.Silver;
+            treeNode1.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode1.Name = "常规压井方法";
+            treeNode1.Text = "已有井选择";
+            treeNode2.BackColor = System.Drawing.Color.Silver;
+            treeNode2.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode2.Name = "节点4";
+            treeNode2.Text = "新建";
+            this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            this.treeView3.SelectedImageIndex = 0;
+            this.treeView3.Size = new System.Drawing.Size(190, 477);
+            this.treeView3.TabIndex = 11;
+            this.treeView3.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView3_NodeMouseClick);
+          
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.CadetBlue;
+            this.button4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.Location = new System.Drawing.Point(5, 115);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button4.Size = new System.Drawing.Size(190, 39);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "光象系统计算方法";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // treeView4
+            // 
+            this.treeView4.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.treeView4.ImageIndex = 1;
+            this.treeView4.ImageList = this.imageList1;
+            this.treeView4.Location = new System.Drawing.Point(5, 158);
+            this.treeView4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.treeView4.Name = "treeView4";
+            treeNode11.BackColor = System.Drawing.Color.Silver;
+            treeNode11.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode11.Name = "常规压井方法";
+            treeNode11.Text = "新建";
+            treeNode12.BackColor = System.Drawing.Color.Silver;
+            treeNode12.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode12.Name = "节点4";
+            treeNode12.Text = "打开";
+            this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode11,
+            treeNode12});
+            this.treeView4.SelectedImageIndex = 0;
+            this.treeView4.Size = new System.Drawing.Size(190, 477);
+            this.treeView4.TabIndex = 12;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.CadetBlue;
+            this.button5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button5.Location = new System.Drawing.Point(5, 115);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button5.Size = new System.Drawing.Size(190, 39);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "数据库管理";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // treeView5
+            // 
+            this.treeView5.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.treeView5.ImageIndex = 1;
+            this.treeView5.ImageList = this.imageList1;
+            this.treeView5.Location = new System.Drawing.Point(5, 158);
+            this.treeView5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.treeView5.Name = "treeView5";
+            treeNode3.BackColor = System.Drawing.Color.Silver;
+            treeNode3.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode3.Name = "常规压井方法";
+            treeNode3.Text = "标准查询";
+            treeNode4.BackColor = System.Drawing.Color.Silver;
+            treeNode4.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode4.Name = "节点4";
+            treeNode4.Text = "案例更新";
+            this.treeView5.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4});
+            this.treeView5.SelectedImageIndex = 0;
+            this.treeView5.Size = new System.Drawing.Size(190, 477);
+            this.treeView5.TabIndex = 13;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Snow;
+            this.panel3.Location = new System.Drawing.Point(201, 115);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1119, 519);
+            this.panel3.TabIndex = 13;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Snow;
+            this.panel4.Location = new System.Drawing.Point(273, 13);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1051, 611);
+            this.panel4.TabIndex = 11;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Snow;
+            this.panel5.Location = new System.Drawing.Point(201, 115);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1119, 519);
+            this.panel5.TabIndex = 14;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel6.Location = new System.Drawing.Point(374, 175);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(747, 369);
+            this.panel6.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel2.Location = new System.Drawing.Point(328, 138);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(870, 476);
+            this.panel2.TabIndex = 13;
             // 
             // Form1
             // 
@@ -682,7 +899,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1335, 710);
+            this.ClientSize = new System.Drawing.Size(1335, 707);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
@@ -769,7 +986,20 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TreeView treeView2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TreeView treeView3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TreeView treeView4;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TreeView treeView5;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

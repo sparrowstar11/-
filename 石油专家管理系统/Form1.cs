@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Newp;
 
 namespace 石油专家管理系统
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -19,6 +21,8 @@ namespace 石油专家管理系统
         private void Form1_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            treeView1.ExpandAll();
+
 
         }
 
@@ -110,6 +114,13 @@ namespace 石油专家管理系统
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            panel2.Controls.Clear();
+            Form3 s = new Form3(this);
+            s.TopLevel = false;
+            s.Dock = DockStyle.Fill;
+            s.FormBorderStyle = FormBorderStyle.None;
+            panel2.Controls.Add(s);
+            s.Show();
 
         }
 
@@ -210,6 +221,68 @@ namespace 石油专家管理系统
         private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.Dispose();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form4 Form = new Form4();
+          
+            Form.ShowDialog();
+         
+            this.Dispose();
+
+
+        }
+
+        private void treeView2_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Level == 0)
+            {
+                panel6.Controls.Clear();
+                Form4 s = new Form4(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel6.Controls.Add(s);
+                s.Show();
+            }
+
+        }
+
+    
+
+        private void treeView3_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+
+           if (e.Node.Level == 0)
+            {
+                panel2.Controls.Clear();
+                Form3 s = new Form3(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel2.Controls.Add(s);
+                s.Show();
+            }
+            if (e.Node.Index== 1)
+            {
+                Form4 Form = new Form4();
+               
+                Form.ShowDialog();
+                this.panel2.Visible = false;
+
+                this.Dispose();
+            }
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Form4 Form = new Form4();
+
+            Form.ShowDialog();
+
             this.Dispose();
         }
     }
