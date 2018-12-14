@@ -227,12 +227,7 @@ namespace 石油专家管理系统
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Form4 Form = new Form4();
-          
-            Form.ShowDialog();
-         
-            this.Dispose();
-
-
+            Form.Show();
         }
 
         private void treeView2_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -240,7 +235,7 @@ namespace 石油专家管理系统
             if (e.Node.Level == 0)
             {
                 panel6.Controls.Clear();
-                Form4 s = new Form4(this);
+                Form4 s = new Form4();
                 s.TopLevel = false;
                 s.Dock = DockStyle.Fill;
                 s.FormBorderStyle = FormBorderStyle.None;

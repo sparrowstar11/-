@@ -41,39 +41,35 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(116, 46);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(87, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 24);
+            this.label1.Size = new System.Drawing.Size(41, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "井 号";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(205, 121);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(154, 97);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 25);
+            this.textBox1.Size = new System.Drawing.Size(148, 21);
             this.textBox1.TabIndex = 1;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(205, 46);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(154, 37);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 23);
+            this.comboBox1.Size = new System.Drawing.Size(147, 20);
             this.comboBox1.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(99, 121);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(74, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "项目名称";
             // 
@@ -81,32 +77,31 @@
             // 
             this.button10.BackColor = System.Drawing.Color.AliceBlue;
             this.button10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button10.Location = new System.Drawing.Point(144, 194);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Location = new System.Drawing.Point(118, 144);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(111, 41);
+            this.button10.Size = new System.Drawing.Size(83, 33);
             this.button10.TabIndex = 19;
             this.button10.Text = "新建";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.AliceBlue;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(344, 194);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(253, 144);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 41);
+            this.button2.Size = new System.Drawing.Size(83, 33);
             this.button2.TabIndex = 21;
             this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(567, 270);
+            this.ClientSize = new System.Drawing.Size(429, 223);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.label2);
@@ -114,9 +109,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form4";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "新建工程";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
