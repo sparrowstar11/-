@@ -280,6 +280,11 @@ namespace 石油专家管理系统
 
             this.Dispose();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -9,19 +9,11 @@ using System.Windows.Forms;
 
 namespace 石油专家管理系统
 {
-    public partial class Form5 : Form
+    public partial class Form9 : Form
     {
-        public Form5()
+        public Form9()
         {
             InitializeComponent();
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            Form5 form = new Form5();
-            //this.Close();
-            form.Show();
-            //this.Dispose();
         }
     }
 }

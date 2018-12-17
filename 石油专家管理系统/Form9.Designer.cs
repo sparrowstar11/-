@@ -1,6 +1,6 @@
 ﻿namespace 石油专家管理系统
 {
-    partial class Form6
+    partial class Form9
     {
         /// <summary>
         /// Required designer variable.
@@ -41,16 +41,16 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(823, 376);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.TabIndex = 9;
             // 
-            // Form6
+            // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 376);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form6";
-            this.Text = "井轨数据";
+            this.Name = "Form9";
+            this.Text = "井身结构参数";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
