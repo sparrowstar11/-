@@ -57,10 +57,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -92,6 +88,10 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -148,9 +148,9 @@
             this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Controls.Add(this.label33);
             this.groupBox6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.groupBox6.Location = new System.Drawing.Point(-2, 316);
+            this.groupBox6.Location = new System.Drawing.Point(-2, 321);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(821, 40);
+            this.groupBox6.Size = new System.Drawing.Size(821, 36);
             this.groupBox6.TabIndex = 23;
             this.groupBox6.TabStop = false;
             this.groupBox6.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox6_Paint);
@@ -386,12 +386,12 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.GhostWhite;
+            this.groupBox4.Controls.Add(this.textBox8);
+            this.groupBox4.Controls.Add(this.textBox5);
+            this.groupBox4.Controls.Add(this.textBox7);
+            this.groupBox4.Controls.Add(this.textBox20);
             this.groupBox4.Controls.Add(this.textBox9);
             this.groupBox4.Controls.Add(this.textBox6);
-            this.groupBox4.Controls.Add(this.textBox8);
-            this.groupBox4.Controls.Add(this.textBox7);
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.textBox11);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label13);
@@ -425,42 +425,6 @@
             this.textBox6.Size = new System.Drawing.Size(113, 23);
             this.textBox6.TabIndex = 33;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged_1);
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox8.Location = new System.Drawing.Point(442, 38);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(94, 23);
-            this.textBox8.TabIndex = 32;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox7.Location = new System.Drawing.Point(442, 9);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(94, 23);
-            this.textBox7.TabIndex = 31;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox5.Location = new System.Drawing.Point(682, 38);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(94, 23);
-            this.textBox5.TabIndex = 30;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox11.Location = new System.Drawing.Point(682, 9);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(94, 23);
-            this.textBox11.TabIndex = 29;
             // 
             // label15
             // 
@@ -664,7 +628,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.AliceBlue;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.label6.Location = new System.Drawing.Point(-3, 174);
+            this.label6.Location = new System.Drawing.Point(0, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 6;
@@ -686,7 +650,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.AliceBlue;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.label4.Location = new System.Drawing.Point(0, 298);
+            this.label4.Location = new System.Drawing.Point(0, 301);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 4;
@@ -708,11 +672,11 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.AliceBlue;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.label3.Location = new System.Drawing.Point(-3, 232);
+            this.label3.Location = new System.Drawing.Point(0, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 24;
-            this.label3.Text = "地层参数";
+            this.label3.Text = "其他参数";
             // 
             // groupBox2
             // 
@@ -725,7 +689,7 @@
             this.groupBox2.Controls.Add(this.label35);
             this.groupBox2.Controls.Add(this.textBox18);
             this.groupBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.groupBox2.Location = new System.Drawing.Point(1, 255);
+            this.groupBox2.Location = new System.Drawing.Point(-2, 258);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(821, 40);
             this.groupBox2.TabIndex = 25;
@@ -734,7 +698,7 @@
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox10.Location = new System.Drawing.Point(578, 7);
+            this.textBox10.Location = new System.Drawing.Point(611, 7);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(160, 23);
@@ -753,11 +717,11 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label30.Location = new System.Drawing.Point(423, 16);
+            this.label30.Location = new System.Drawing.Point(423, 11);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(123, 12);
+            this.label30.Size = new System.Drawing.Size(182, 12);
             this.label30.TabIndex = 27;
-            this.label30.Text = "地热增温率（m/℃）";
+            this.label30.Text = "裸眼薄弱地层破裂压力（MPa）";
             // 
             // label31
             // 
@@ -772,11 +736,11 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label34.Location = new System.Drawing.Point(4, 16);
+            this.label34.Location = new System.Drawing.Point(5, 11);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(96, 12);
+            this.label34.Size = new System.Drawing.Size(182, 12);
             this.label34.TabIndex = 2;
-            this.label34.Text = "井口温度（℃）";
+            this.label34.Text = "井口装置额定工作压力（MPa）";
             // 
             // label35
             // 
@@ -790,11 +754,47 @@
             // textBox18
             // 
             this.textBox18.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox18.Location = new System.Drawing.Point(106, 7);
+            this.textBox18.Location = new System.Drawing.Point(197, 7);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(160, 23);
             this.textBox18.TabIndex = 1;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.textBox20.Location = new System.Drawing.Point(433, 7);
+            this.textBox20.Multiline = true;
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(113, 23);
+            this.textBox20.TabIndex = 35;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.textBox7.Location = new System.Drawing.Point(433, 36);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(113, 23);
+            this.textBox7.TabIndex = 36;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.textBox5.Location = new System.Drawing.Point(674, 36);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(113, 23);
+            this.textBox5.TabIndex = 37;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.textBox8.Location = new System.Drawing.Point(674, 7);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(113, 23);
+            this.textBox8.TabIndex = 38;
             // 
             // Form2
             // 
@@ -852,7 +852,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label19;
@@ -875,9 +874,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBox15;
@@ -890,5 +886,9 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox20;
     }
 }
