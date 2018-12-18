@@ -40,7 +40,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -163,17 +162,6 @@
             this.textBox1.Size = new System.Drawing.Size(175, 26);
             this.textBox1.TabIndex = 3;
             // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.AliceBlue;
-            this.button10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button10.Location = new System.Drawing.Point(196, 266);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(78, 33);
-            this.button10.TabIndex = 18;
-            this.button10.Text = "上一步";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.AliceBlue;
@@ -193,7 +181,6 @@
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(393, 311);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button10);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -222,7 +209,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button1;
     }
 }

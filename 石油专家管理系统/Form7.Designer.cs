@@ -43,8 +43,8 @@
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.button10 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -226,6 +226,17 @@
             this.radioButton9.Text = "低";
             this.radioButton9.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.AliceBlue;
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(330, 326);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 36);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "压井计算";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.AliceBlue;
@@ -237,17 +248,6 @@
             this.button10.Text = "上一步";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.AliceBlue;
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(330, 326);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 36);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "压井计算";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // Form7
             // 
@@ -292,7 +292,7 @@
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button10;
     }
 }
