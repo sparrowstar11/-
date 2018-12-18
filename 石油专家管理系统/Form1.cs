@@ -154,7 +154,7 @@ namespace 石油专家管理系统
 
         }
 
-       
+
 
         private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
         {
@@ -197,7 +197,7 @@ namespace 石油专家管理系统
             {
                 if (treeView1.SelectedNode.Name == "工程师法")
                 {
-                    
+
                 }
             }
 
@@ -232,10 +232,93 @@ namespace 石油专家管理系统
 
         private void treeView2_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if (e.Node.Level == 0)
+            if (e.Node.Text == "查看")
             {
                 panel6.Controls.Clear();
-                Form4 s = new Form4();
+                Form12 s = new Form12(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel6.Controls.Add(s);
+                s.Show();
+            }
+
+            if (e.Node.Text == "新建")
+            {
+                panel6.Controls.Clear();
+                Form4 s = new Form4(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel6.Controls.Add(s);
+                s.Show();
+            }
+            if (e.Node.Text == "基本信息")
+            {
+                panel6.Controls.Clear();
+                Form2 s = new Form2(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel6.Controls.Add(s);
+                s.Show();
+            }
+            if (e.Node.Text == "钻具组合")
+            {
+                panel6.Controls.Clear();
+                Form5 s = new Form5(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel6.Controls.Add(s);
+                s.Show();
+            }
+            if (e.Node.Text == "井轨数据")
+            {
+                panel6.Controls.Clear();
+                Form6 s = new Form6(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel6.Controls.Add(s);
+                s.Show();
+            }
+
+            if (e.Node.Text == "井轨数据")
+            {
+                panel6.Controls.Clear();
+                Form6 s = new Form6(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel6.Controls.Add(s);
+                s.Show();
+            }
+
+            if (e.Node.Text == "井身结构参数")
+            {
+                panel6.Controls.Clear();
+                Form9 s = new Form9(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel6.Controls.Add(s);
+                s.Show();
+            }
+            if (e.Node.Text == "溢流情况描述")
+            {
+                panel6.Controls.Clear();
+                Form10 s = new Form10(this);
+                s.TopLevel = false;
+                s.Dock = DockStyle.Fill;
+                s.FormBorderStyle = FormBorderStyle.None;
+                panel6.Controls.Add(s);
+                s.Show();
+            }
+            if (e.Node.Text == "计算")
+            {
+                panel6.Controls.Clear();
+                Form8 s = new Form8(this);
                 s.TopLevel = false;
                 s.Dock = DockStyle.Fill;
                 s.FormBorderStyle = FormBorderStyle.None;
@@ -245,30 +328,11 @@ namespace 石油专家管理系统
 
         }
 
-    
+
 
         private void treeView3_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
 
-           if (e.Node.Level == 0)
-            {
-                panel2.Controls.Clear();
-                Form3 s = new Form3(this);
-                s.TopLevel = false;
-                s.Dock = DockStyle.Fill;
-                s.FormBorderStyle = FormBorderStyle.None;
-                panel2.Controls.Add(s);
-                s.Show();
-            }
-            if (e.Node.Index== 1)
-            {
-                Form4 Form = new Form4();
-               
-                Form.ShowDialog();
-                this.panel2.Visible = false;
-
-                this.Dispose();
-            }
 
         }
 
@@ -285,8 +349,87 @@ namespace 石油专家管理系统
         {
 
         }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form12 Form = new Form12();
+            Form.Show();
+        }
+
+        private void pictureBox7_Click_1(object sender, EventArgs e)
+        {
+            panel6.Controls.Clear();
+            Form2 s = new Form2();
+            s.TopLevel = false;
+            s.Dock = DockStyle.Fill;
+            s.FormBorderStyle = FormBorderStyle.None;
+            panel6.Controls.Add(s);
+            s.Show();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            panel6.Controls.Clear();
+            Form5 s = new Form5();
+            s.TopLevel = false;
+            s.Dock = DockStyle.Fill;
+            s.FormBorderStyle = FormBorderStyle.None;
+            panel6.Controls.Add(s);
+            s.Show();
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            panel6.Controls.Clear();
+            Form6 s = new Form6();
+            s.TopLevel = false;
+            s.Dock = DockStyle.Fill;
+            s.FormBorderStyle = FormBorderStyle.None;
+            panel6.Controls.Add(s);
+            s.Show();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            panel6.Controls.Clear();
+            Form9 s = new Form9();
+            s.TopLevel = false;
+            s.Dock = DockStyle.Fill;
+            s.FormBorderStyle = FormBorderStyle.None;
+            panel6.Controls.Add(s);
+            s.Show();
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+            panel6.Controls.Clear();
+            Form10 s = new Form10();
+            s.TopLevel = false;
+            s.Dock = DockStyle.Fill;
+            s.FormBorderStyle = FormBorderStyle.None;
+            panel6.Controls.Add(s);
+            s.Show();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            panel6.Controls.Clear();
+            Form8 s = new Form8();
+            s.TopLevel = false;
+            s.Dock = DockStyle.Fill;
+            s.FormBorderStyle = FormBorderStyle.None;
+            panel6.Controls.Add(s);
+            s.Show();
+        }
+
     }
 }
+
 
 
 

@@ -12,7 +12,12 @@ namespace Newp
 {
     public partial class Form2 : Form
     {
-        
+        Form1 f1;
+        public Form2(Form1 form1)
+        {
+            f1 = form1;
+            InitializeComponent();
+        }
         public Form2()
         {
             InitializeComponent();
@@ -319,6 +324,11 @@ namespace Newp
         }
 
         private void textBox6_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged_1(object sender, EventArgs e)
         {
 
         }
