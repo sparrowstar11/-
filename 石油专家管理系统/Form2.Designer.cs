@@ -105,12 +105,13 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(-4, -1);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1081, 825);
+            this.tabControl1.Size = new System.Drawing.Size(892, 483);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -131,8 +132,8 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(1073, 796);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(884, 454);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "基础数据";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -150,9 +151,9 @@
             this.groupBox2.Controls.Add(this.textBox18);
             this.groupBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox2.Location = new System.Drawing.Point(-3, 322);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(893, 50);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
@@ -161,7 +162,7 @@
             // 
             this.textBox10.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox10.Location = new System.Drawing.Point(670, 9);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(88, 28);
@@ -223,7 +224,7 @@
             // 
             this.textBox18.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox18.Location = new System.Drawing.Point(263, 9);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(4);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(114, 28);
@@ -253,9 +254,9 @@
             this.groupBox6.Controls.Add(this.label33);
             this.groupBox6.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox6.Location = new System.Drawing.Point(-3, 401);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox6.Size = new System.Drawing.Size(893, 45);
             this.groupBox6.TabIndex = 23;
             this.groupBox6.TabStop = false;
@@ -265,7 +266,7 @@
             // 
             this.textBox19.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox19.Location = new System.Drawing.Point(141, 10);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(4);
             this.textBox19.Multiline = true;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(92, 28);
@@ -284,9 +285,9 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox5.Location = new System.Drawing.Point(87, 61);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(1028, 62);
             this.groupBox5.TabIndex = 22;
             this.groupBox5.TabStop = false;
@@ -297,7 +298,7 @@
             // 
             this.textBox14.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox14.Location = new System.Drawing.Point(265, 20);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(4);
             this.textBox14.Multiline = true;
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(112, 28);
@@ -307,7 +308,7 @@
             // 
             this.textBox13.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox13.Location = new System.Drawing.Point(820, 20);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(4);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(112, 28);
@@ -381,7 +382,7 @@
             // 
             this.textBox16.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox16.Location = new System.Drawing.Point(447, 8);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(4);
             this.textBox16.Multiline = true;
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(71, 28);
@@ -391,7 +392,7 @@
             // 
             this.textBox15.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox15.Location = new System.Drawing.Point(670, 8);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(4);
             this.textBox15.Multiline = true;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(103, 28);
@@ -444,9 +445,9 @@
             this.groupBox3.Controls.Add(this.textBox17);
             this.groupBox3.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox3.Location = new System.Drawing.Point(-3, 246);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(893, 50);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
@@ -456,7 +457,7 @@
             // 
             this.textBox12.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox12.Location = new System.Drawing.Point(567, 9);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
             this.textBox12.Multiline = true;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(101, 28);
@@ -519,7 +520,7 @@
             // 
             this.textBox17.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox17.Location = new System.Drawing.Point(141, 9);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox17.Margin = new System.Windows.Forms.Padding(4);
             this.textBox17.Multiline = true;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(124, 28);
@@ -542,9 +543,9 @@
             this.groupBox4.Controls.Add(this.label18);
             this.groupBox4.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox4.Location = new System.Drawing.Point(-3, 136);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(893, 78);
             this.groupBox4.TabIndex = 20;
             this.groupBox4.TabStop = false;
@@ -555,7 +556,7 @@
             // 
             this.textBox8.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox8.Location = new System.Drawing.Point(763, 9);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(108, 28);
@@ -565,7 +566,7 @@
             // 
             this.textBox5.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox5.Location = new System.Drawing.Point(763, 45);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(108, 28);
@@ -575,7 +576,7 @@
             // 
             this.textBox7.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox7.Location = new System.Drawing.Point(523, 46);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(125, 28);
@@ -585,7 +586,7 @@
             // 
             this.textBox20.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox20.Location = new System.Drawing.Point(523, 9);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(4);
             this.textBox20.Multiline = true;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(125, 28);
@@ -595,7 +596,7 @@
             // 
             this.textBox9.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox9.Location = new System.Drawing.Point(183, 9);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(82, 28);
@@ -606,7 +607,7 @@
             // 
             this.textBox6.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox6.Location = new System.Drawing.Point(183, 45);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(82, 28);
@@ -695,9 +696,9 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Location = new System.Drawing.Point(-3, 26);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(893, 78);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
@@ -724,7 +725,7 @@
             "直井",
             "定向井"});
             this.comboBox1.Location = new System.Drawing.Point(567, 22);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(108, 23);
             this.comboBox1.TabIndex = 16;
@@ -757,7 +758,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox1.Location = new System.Drawing.Point(116, 8);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(89, 28);
@@ -790,7 +791,7 @@
             // 
             this.textBox3.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox3.Location = new System.Drawing.Point(352, 37);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(85, 28);
@@ -800,7 +801,7 @@
             // 
             this.textBox4.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox4.Location = new System.Drawing.Point(352, 3);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(85, 28);
@@ -810,7 +811,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.textBox2.Location = new System.Drawing.Point(116, 44);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(89, 28);
@@ -873,7 +874,7 @@
             this.ClientSize = new System.Drawing.Size(892, 483);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "基本信息";

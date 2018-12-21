@@ -30,34 +30,34 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("查看");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("新建");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("基本信息");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("钻具组合");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("井轨数据");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("井身结构");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("溢流情况描述");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("计算");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("已有井选择");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("查看");
             System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("新建");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("新建");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("打开");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("可能法");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("工程师法");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("边循环边加重法");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("常规压井方法", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14,
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("直推法");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("置换法");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("平衡点法");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("非常规压井方法", new System.Windows.Forms.TreeNode[] {
-            treeNode17,
-            treeNode18,
-            treeNode19});
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("标准查询");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("案例更新");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("基本信息");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("钻具组合");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("井轨数据");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("井身结构");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("溢流情况描述");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("计算");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("已有井选择");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("新建");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("新建");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("打开");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("可能法");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("工程师法");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("边循环边加重法");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("常规压井方法", new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4,
+            treeNode25});
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("直推法");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("置换法");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("平衡点法");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("非常规压井方法", new System.Windows.Forms.TreeNode[] {
+            treeNode27,
+            treeNode28,
+            treeNode29});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("标准查询");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("案例更新");
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.注册ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,7 +173,7 @@
             this.退出系统ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("退出系统ToolStripMenuItem.Image")));
             this.退出系统ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 1, 1, 0);
             this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
             this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
@@ -260,7 +260,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -296,9 +298,7 @@
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel6.BackColor = System.Drawing.Color.AliceBlue;
             this.panel6.Location = new System.Drawing.Point(200, 115);
@@ -316,54 +316,54 @@
             this.treeView2.Location = new System.Drawing.Point(5, 158);
             this.treeView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView2.Name = "treeView2";
-            treeNode1.BackColor = System.Drawing.Color.Silver;
-            treeNode1.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode1.Name = "常规压井方法";
-            treeNode1.Tag = "0";
-            treeNode1.Text = "查看";
-            treeNode2.BackColor = System.Drawing.Color.Silver;
-            treeNode2.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode2.Name = "节点4";
-            treeNode2.Tag = "1";
-            treeNode2.Text = "新建";
-            treeNode3.BackColor = System.Drawing.Color.Silver;
-            treeNode3.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode3.Name = "节点2";
-            treeNode3.Tag = "2";
-            treeNode3.Text = "基本信息";
-            treeNode4.BackColor = System.Drawing.Color.Silver;
-            treeNode4.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode4.Name = "节点3";
-            treeNode4.Tag = "3";
-            treeNode4.Text = "钻具组合";
-            treeNode5.BackColor = System.Drawing.Color.Silver;
-            treeNode5.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode5.Name = "节点4";
-            treeNode5.Tag = "4";
-            treeNode5.Text = "井轨数据";
-            treeNode6.BackColor = System.Drawing.Color.Silver;
-            treeNode6.Name = "节点5";
-            treeNode6.Tag = "5";
-            treeNode6.Text = "井身结构";
-            treeNode7.BackColor = System.Drawing.Color.Silver;
-            treeNode7.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode7.Name = "节点6";
-            treeNode7.Tag = "6";
-            treeNode7.Text = "溢流情况描述";
-            treeNode8.BackColor = System.Drawing.Color.Silver;
-            treeNode8.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode8.Name = "节点7";
-            treeNode8.Tag = "7";
-            treeNode8.Text = "计算";
+            treeNode9.BackColor = System.Drawing.Color.Silver;
+            treeNode9.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode9.Name = "常规压井方法";
+            treeNode9.Tag = "0";
+            treeNode9.Text = "查看";
+            treeNode10.BackColor = System.Drawing.Color.Silver;
+            treeNode10.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode10.Name = "节点4";
+            treeNode10.Tag = "1";
+            treeNode10.Text = "新建";
+            treeNode19.BackColor = System.Drawing.Color.Silver;
+            treeNode19.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode19.Name = "节点2";
+            treeNode19.Tag = "2";
+            treeNode19.Text = "基本信息";
+            treeNode20.BackColor = System.Drawing.Color.Silver;
+            treeNode20.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode20.Name = "节点3";
+            treeNode20.Tag = "3";
+            treeNode20.Text = "钻具组合";
+            treeNode21.BackColor = System.Drawing.Color.Silver;
+            treeNode21.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode21.Name = "节点4";
+            treeNode21.Tag = "4";
+            treeNode21.Text = "井轨数据";
+            treeNode22.BackColor = System.Drawing.Color.Silver;
+            treeNode22.Name = "节点5";
+            treeNode22.Tag = "5";
+            treeNode22.Text = "井身结构";
+            treeNode23.BackColor = System.Drawing.Color.Silver;
+            treeNode23.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode23.Name = "节点6";
+            treeNode23.Tag = "6";
+            treeNode23.Text = "溢流情况描述";
+            treeNode24.BackColor = System.Drawing.Color.Silver;
+            treeNode24.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode24.Name = "节点7";
+            treeNode24.Tag = "7";
+            treeNode24.Text = "计算";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8});
+            treeNode9,
+            treeNode10,
+            treeNode19,
+            treeNode20,
+            treeNode21,
+            treeNode22,
+            treeNode23,
+            treeNode24});
             this.treeView2.SelectedImageIndex = 0;
             this.treeView2.Size = new System.Drawing.Size(191, 476);
             this.treeView2.TabIndex = 8;
@@ -656,17 +656,17 @@
             this.treeView3.Location = new System.Drawing.Point(5, 158);
             this.treeView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView3.Name = "treeView3";
-            treeNode9.BackColor = System.Drawing.Color.Silver;
-            treeNode9.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode9.Name = "常规压井方法";
-            treeNode9.Text = "已有井选择";
-            treeNode10.BackColor = System.Drawing.Color.Silver;
-            treeNode10.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode10.Name = "节点4";
-            treeNode10.Text = "新建";
+            treeNode11.BackColor = System.Drawing.Color.Silver;
+            treeNode11.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode11.Name = "常规压井方法";
+            treeNode11.Text = "已有井选择";
+            treeNode12.BackColor = System.Drawing.Color.Silver;
+            treeNode12.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode12.Name = "节点4";
+            treeNode12.Text = "新建";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10});
+            treeNode11,
+            treeNode12});
             this.treeView3.SelectedImageIndex = 0;
             this.treeView3.Size = new System.Drawing.Size(191, 476);
             this.treeView3.TabIndex = 11;
@@ -795,17 +795,17 @@
             this.treeView4.Location = new System.Drawing.Point(5, 158);
             this.treeView4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView4.Name = "treeView4";
-            treeNode11.BackColor = System.Drawing.Color.Silver;
-            treeNode11.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode11.Name = "常规压井方法";
-            treeNode11.Text = "新建";
-            treeNode12.BackColor = System.Drawing.Color.Silver;
-            treeNode12.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode12.Name = "节点4";
-            treeNode12.Text = "打开";
+            treeNode1.BackColor = System.Drawing.Color.Silver;
+            treeNode1.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode1.Name = "常规压井方法";
+            treeNode1.Text = "新建";
+            treeNode2.BackColor = System.Drawing.Color.Silver;
+            treeNode2.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode2.Name = "节点4";
+            treeNode2.Text = "打开";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode12});
+            treeNode1,
+            treeNode2});
             this.treeView4.SelectedImageIndex = 0;
             this.treeView4.Size = new System.Drawing.Size(191, 476);
             this.treeView4.TabIndex = 12;
@@ -950,41 +950,41 @@
             this.treeView1.Location = new System.Drawing.Point(5, 60);
             this.treeView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView1.Name = "treeView1";
-            treeNode13.BackColor = System.Drawing.Color.Transparent;
-            treeNode13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode13.Name = "节点1";
-            treeNode13.Text = "可能法";
-            treeNode14.BackColor = System.Drawing.Color.Transparent;
-            treeNode14.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode14.Name = "工程师法";
-            treeNode14.Text = "工程师法";
-            treeNode15.BackColor = System.Drawing.Color.Transparent;
-            treeNode15.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode15.Name = "节点3";
-            treeNode15.Text = "边循环边加重法";
-            treeNode16.BackColor = System.Drawing.Color.Silver;
-            treeNode16.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode16.Name = "常规压井方法";
-            treeNode16.Text = "常规压井方法";
-            treeNode17.BackColor = System.Drawing.Color.Transparent;
-            treeNode17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode17.Name = "节点5";
-            treeNode17.Text = "直推法";
-            treeNode18.BackColor = System.Drawing.Color.Transparent;
-            treeNode18.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode18.Name = "节点6";
-            treeNode18.Text = "置换法";
-            treeNode19.BackColor = System.Drawing.Color.Transparent;
-            treeNode19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode19.Name = "节点7";
-            treeNode19.Text = "平衡点法";
-            treeNode20.BackColor = System.Drawing.Color.Silver;
-            treeNode20.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode20.Name = "节点4";
-            treeNode20.Text = "非常规压井方法";
+            treeNode3.BackColor = System.Drawing.Color.Transparent;
+            treeNode3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode3.Name = "节点1";
+            treeNode3.Text = "可能法";
+            treeNode4.BackColor = System.Drawing.Color.Transparent;
+            treeNode4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode4.Name = "工程师法";
+            treeNode4.Text = "工程师法";
+            treeNode25.BackColor = System.Drawing.Color.Transparent;
+            treeNode25.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode25.Name = "节点3";
+            treeNode25.Text = "边循环边加重法";
+            treeNode26.BackColor = System.Drawing.Color.Silver;
+            treeNode26.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode26.Name = "常规压井方法";
+            treeNode26.Text = "常规压井方法";
+            treeNode27.BackColor = System.Drawing.Color.Transparent;
+            treeNode27.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode27.Name = "节点5";
+            treeNode27.Text = "直推法";
+            treeNode28.BackColor = System.Drawing.Color.Transparent;
+            treeNode28.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode28.Name = "节点6";
+            treeNode28.Text = "置换法";
+            treeNode29.BackColor = System.Drawing.Color.Transparent;
+            treeNode29.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode29.Name = "节点7";
+            treeNode29.Text = "平衡点法";
+            treeNode30.BackColor = System.Drawing.Color.Silver;
+            treeNode30.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode30.Name = "节点4";
+            treeNode30.Text = "非常规压井方法";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode20});
+            treeNode26,
+            treeNode30});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(229, 530);
             this.treeView1.TabIndex = 2;
@@ -1021,17 +1021,17 @@
             this.treeView5.Location = new System.Drawing.Point(5, 158);
             this.treeView5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView5.Name = "treeView5";
-            treeNode21.BackColor = System.Drawing.Color.Silver;
-            treeNode21.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode21.Name = "常规压井方法";
-            treeNode21.Text = "标准查询";
-            treeNode22.BackColor = System.Drawing.Color.Silver;
-            treeNode22.ForeColor = System.Drawing.Color.MidnightBlue;
-            treeNode22.Name = "节点4";
-            treeNode22.Text = "案例更新";
+            treeNode5.BackColor = System.Drawing.Color.Silver;
+            treeNode5.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode5.Name = "常规压井方法";
+            treeNode5.Text = "标准查询";
+            treeNode6.BackColor = System.Drawing.Color.Silver;
+            treeNode6.ForeColor = System.Drawing.Color.MidnightBlue;
+            treeNode6.Name = "节点4";
+            treeNode6.Text = "案例更新";
             this.treeView5.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode21,
-            treeNode22});
+            treeNode5,
+            treeNode6});
             this.treeView5.SelectedImageIndex = 0;
             this.treeView5.Size = new System.Drawing.Size(191, 476);
             this.treeView5.TabIndex = 13;
