@@ -61,14 +61,14 @@ namespace 石油专家管理系统
             else
                 time = time2;
             time= Math.Ceiling(time);
-            while(time%5!=0)
+          /* while(time%5!=0)
             {
                 time++;
             }
             while(max%5!=0)
             {
                 max++;
-            }
+            }*/
             chart.AxisX.Minimum = 0;
             chart.AxisX.Maximum =Math.Ceiling( time);
             chart.AxisY.Minimum = 0;
@@ -100,17 +100,17 @@ namespace 石油专家管理系统
             chart2.ChartAreas[0].AxisY.LabelStyle.Format = "";
             chart2.ChartAreas[0].AxisY.LabelStyle.IsEndLabelVisible = true;double time3 = circulatingtime.Max();
             time3 = Math.Ceiling(time3);
-           
-            while (time3%5!=0)
+            double pit = pitgain.Max();
+            /*while (time3%5!=0)
             {
                 time3++;
             }
-            double pit = pitgain.Max();
+            
             pit = Math.Ceiling(pit);
             while(pit%5!=0)
             {
                 pit++;
-            }
+            }*/
             chart2.ChartAreas[0].AxisX.Minimum = 0;
             chart2.ChartAreas[0].AxisX.Maximum =Math.Ceiling( time3);
             chart2.ChartAreas[0].AxisY.Minimum = 0;
