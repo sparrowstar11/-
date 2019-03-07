@@ -193,9 +193,13 @@ namespace 石油专家管理系统.forms
                             double t2 = s.gett2();//漏失完水的时间，输出，画图（4倍压回法时用，见流程图）
                             double t1 = s.gett1();//压缩气的时间，输出，画图（钻进时压回法用，见流程图） ----
                             double Pderta = s.getPderta();  //渗流阻力，Mpa-----输出（4倍时用，见流程图）
-                            double pat1 = pat[1];
+                            double pat1 = pat.Max();
                             double pp = s.getPP();
-                            Form13 f = new Form13(yy, dep, douZjyDensity, douZjyPL, pd,pa,yjden,Qyj,pat1,atyj,ss,pp,vyj,tyj,pat);
+                           
+                            Form13 f = new Form13(yy, dep, douZjyDensity, douZjyPL, pd,pa,yjden,Qyj,pat1,atyj,ss,pp,vyj,tyj,pat,t1,t2);
+                            f.Show();
+                            this.Close();
+                            this.Dispose();
 
                         }
                         else
@@ -227,6 +231,33 @@ namespace 石油专家管理系统.forms
 
                 }
             }
+            else if(no=="空井")
+            {
+                if (xx == "定向井")
+                {
+
+                }
+                else
+                {
+                    if (ss != "gas")
+                    {
+                        double D = douZtSize * (douWellEyeKDL + 1);
+                        Pressure_back_killing s = new Pressure_back_killing(yy, yy, xx, ss, dep, pd, pa, D, douZgOutterDiameter, vgain, douZjyDensity, douZjyPL, ztl, x2, tgxDep, x1);
+                    }
+                    else if ((ss == "gas" && radioButton3.Checked == true) || ss == "gas" && radioButton8.Checked == true)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+               
+            }
+
+
+
          
         }
     }

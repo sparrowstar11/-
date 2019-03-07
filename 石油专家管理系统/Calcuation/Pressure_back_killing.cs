@@ -8,7 +8,7 @@ namespace 石油专家管理系统.Calcuation
     class Pressure_back_killing
     {
         private const double PI = 3.1415926;
-        private const double g = 9.81;
+        private const double g = 0.00981;
         private const int NT = 300;
 
         //1.基础参数---------------------
@@ -129,7 +129,7 @@ namespace 石油专家管理系统.Calcuation
             this.D = D;
             this.Vgain = Vgain;
             this.zjden = zjden;
-            this.Qzj = Qzj;
+            this.Qzj = Qzj/1000;
             this.ztl = ztl;
             this.oiltype = oiltype;
             this.Pbs = Pbs;
@@ -410,8 +410,8 @@ namespace 石油专家管理系统.Calcuation
             this.Qyj = Qzj / 2;   //压井排量-------------具体取值需要依据现场。
             Pp = Pd + zjden * g * h;   //地层压力 Pa   
             hg = Vgain / Cdpca;   //气体高度（长度） m                                            //初始时钻井液垂深
-            this.yjden = zjden + 50;              //压回法压井液密度 Kg/m^3  0.05为h2s安全值
-            Pderta = (Qyj * 1000) * u * Math.Log(re / rw) / (2 * PI * K * hh) * 1000000;  //++++++++++++++
+            this.yjden = zjden + 0.05;              //压回法压井液密度 Kg/m^3  0.05为h2s安全值
+            Pderta = (Qyj * 10000) * u * Math.Log(re / rw) / (2 * PI * K * hh);  //++++++++++++++
 
             V2 = (Pa + zjden * g * (h - hg)) * Vgain / (Pp + Pderta);    //达到地层压力时,气体体积
             this.t1 = (Vgain - V2) / Qyj;  //第一阶段时间 气体量不变 p1*v1=p2*v2
@@ -420,6 +420,7 @@ namespace 石油专家管理系统.Calcuation
             pt.Add(Pa + zjden * g * (h - hg));
             vt.Add(Vgain);
             Pat.Add(Pa); //初值对应0时刻i从1算
+            atyj.Add(0);
 
             //第一阶段，压缩阶段。
             for (int i = 1; i <= Math.Floor(t1); i++)
@@ -427,8 +428,10 @@ namespace 石油专家管理系统.Calcuation
                 vt.Add(vt[i - 1] - Qyj);//vt[i]=vt[i-1]-Qyj;
                 pt.Add(pt[i - 1] * vt[i - 1] / vt[i]);// pt[i]=pt[i-1]*vt[i-1]/vt[i];
                 Pat.Add(pt[i] - zjden * g * (h - hg) - yjden * g * Qyj * i / Cdpca);   //压井时的套压
+                atyj.Add(i);
             }
             Pat.Add(Pa + Pderta);  //++++++++++++++
+            atyj.Add(t1+1);
 
             //第二阶段开始漏失 假定以压井排量漏失
             this.t2 = V2 / Qyj;   //漏失完需要的时间
@@ -445,7 +448,9 @@ namespace 石油专家管理系统.Calcuation
             Vyj = Vgain * 8;  //压井泥浆量，4倍。输出                
             this.tyj = Vyj / Qyj;  //压井施工时间，输出
             Pat.Add(Pderta + Pp - yjden * g * hg - zjden * g * (h - hg));
+            atyj.Add(t2);
             Pat.Add(Pderta + Pp - yjden * g * Vyj / Cdpca - zjden * g * (h - Vyj / Cdpca));
+            atyj.Add(tyj);
 
             //停泵 套压为0  再用工程师法压井 循环钻井液.    
             double PPbs = 0;//临时存储套管鞋实际所受压力

@@ -126,7 +126,7 @@ namespace 石油专家管理系统
                     }
                 }
             }
-           /* else
+            else
             {
                 if (x == "定向井")
                 {
@@ -139,13 +139,13 @@ namespace 石油专家管理系统
                     string result = Fluidtype.kongjingqixiazuan.JudeEarthTypeUnderZuanJing2(textBox1.Text, x, x2, x3, x4, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), x9, x5, x6, x8, tw, 0, ref dens);
                     if (radioButton2.Checked)
                     {
-                          Form7 fro = new Form7();
-                          this.Close();
+                          Form7 fro = new Form7(result, x, textBox1.Text, x2, x3, x10, x8, x9, x5, x4, x11, x12, x13, x14, x15, x6, x16, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), dens, x17, x18, tw, no, x7); 
+                        this.Close();
                           fro.Show();
                           this.Dispose();
                     }
                 }
-            }*/
+            }
 
 
 

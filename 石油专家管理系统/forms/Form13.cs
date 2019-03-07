@@ -24,7 +24,9 @@ namespace 石油专家管理系统.forms
         double vyj ; //压井泥浆量，4倍。输出
         double pat1;
         double tyj ;//压井施工时间，输出
-        public Form13(string yy,double dep,double douZjyDensity, double douZjyPL,double pd,double pa,double yjden,double Qyj, double pat1, List<double> atyj,string ss, double pp,double vyj,double tyj, List<double>pat)
+        double t1;
+        double t2;
+        public Form13(string yy,double dep,double douZjyDensity, double douZjyPL,double pd,double pa,double yjden,double Qyj, double pat1, List<double> atyj,string ss, double pp,double vyj,double tyj, List<double>pat,double t1,double t2)
         {
             InitializeComponent();
             this.yy = yy;
@@ -52,23 +54,18 @@ namespace 石油专家管理系统.forms
             this.tyj = tyj;
             textBox14.Text = Math.Round(tyj,2).ToString();
             textBox11.Text = ss;
-
+            this.t1 = t1;
+            this.t2 = t2;
             chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Number;
             chart1.ChartAreas[0].AxisX.LabelStyle.Format = "";
             chart1.ChartAreas[0].AxisY.LabelStyle.Format = "";
-            chart1.ChartAreas[0].AxisY.LabelStyle.IsEndLabelVisible = true; double time3 = atyj.Max();
-            time3 = Math.Ceiling(time3);
-            double pit = pat.Max();
-            /*while (time3%5!=0)
-            {
-                time3++;
-            }
+            chart1.ChartAreas[0].AxisY.LabelStyle.IsEndLabelVisible = true;
+            double time3 =Math.Ceiling(atyj.Max());
             
+            double pit = pat.Max();
+       
             pit = Math.Ceiling(pit);
-            while(pit%5!=0)
-            {
-                pit++;
-            }*/
+       
             chart1.ChartAreas[0].AxisX.Minimum = 0;
             chart1.ChartAreas[0].AxisX.Maximum = Math.Ceiling(time3);
             chart1.ChartAreas[0].AxisY.Minimum = 0;
