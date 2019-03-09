@@ -485,7 +485,8 @@ namespace 石油专家管理系统.Calcuation
         /// <param name="Pat"></param>
         /// <param name="Patmax"></param> 
         /// <param name="Vyj">压井泥浆量 m^3</param>  
-        /// <param name="Pderta">渗流阻力 Mpa</param>      
+        /// <param name="Pderta">渗流阻力 Mpa</param>   
+        
         public void Pressure_back_4Time()
         {
 

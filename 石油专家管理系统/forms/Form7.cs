@@ -128,7 +128,9 @@ namespace 石油专家管理系统.forms
                     double[] fai = { 0 };
                     if (ss != "gas")
                     {
-                        
+                        /// <summary>
+                        /// 直井-----钻进---油 油水 地层水---工程师
+                        /// </summary> 
                         EngMethod me = new EngMethod(yy, xx, dep, tgxDep, douWellTemp, douTgDiameter, douZtSize, douWellEyeKDL, douZjyDensity, douZjyPL, douDrZWL, douDbsWellDepth, douDbsTaoya, douDbsPL, douZgOutterDiameter,
                         douZgWallThickness, pd, pa, vgain, companyName, drillingCrewName, tw, shen, alfa, fai, 0, ss, dens);
                         me.plumbWell(ss, dens);
@@ -153,6 +155,9 @@ namespace 石油专家管理系统.forms
                     }
                     else if ((ss == "gas" && radioButton3.Checked == true) || ss == "gas" && radioButton8.Checked == true)
                     {
+                        /// <summary>
+                        /// 直井-----钻进---气 （不含硫化氢 含低硫化氢）---工程师
+                        /// </summary> 
                         EngMethod me = new EngMethod(yy, xx, dep, tgxDep, douWellTemp, douTgDiameter, douZtSize, douWellEyeKDL, douZjyDensity, douZjyPL, douDrZWL, douDbsWellDepth, douDbsTaoya, douDbsPL, douZgOutterDiameter,
                         douZgWallThickness, pd, pa, vgain, companyName, drillingCrewName, tw, shen, alfa, fai, 0, ss, dens);
                         me.plumbWell(ss, dens);
@@ -177,10 +182,13 @@ namespace 石油专家管理系统.forms
                     }
                     else
                     {
+                        /// <summary>
+                        /// 直井-----钻进---8倍（气高硫化氢）---压回法--不压破
+                        /// </summary>
                         double D = douZtSize * (douWellEyeKDL + 1);
                         //钻进 8倍
                         Pressure_back_killing s = new Pressure_back_killing(yy, yy, xx, ss, dep, pd, pa, D, douZgOutterDiameter, vgain, douZjyDensity, douZjyPL, ztl,x2 , tgxDep,x1);
-                       int re= s.Pressure_back_8Time_ZuanJin();
+                        int re= s.Pressure_back_8Time_ZuanJin();
                         if(re==1)
                         {
                             double patmax = s.getPatmax();//最大套压------输出3   //最大施工泵压 // Pat（1）
@@ -204,6 +212,9 @@ namespace 石油专家管理系统.forms
                         }
                         else
                         {
+                            /// <summary>
+                            /// 直井-----钻进---8倍（气高硫化氢）---压破 --工程师法
+                            /// </summary>
                             MessageBox.Show("会压破，有风险");
                             EngMethod me = new EngMethod(yy, xx, dep, tgxDep, douWellTemp, douTgDiameter, douZtSize, douWellEyeKDL, douZjyDensity, douZjyPL, douDrZWL, douDbsWellDepth, douDbsTaoya, douDbsPL, douZgOutterDiameter,
                         douZgWallThickness, pd, pa, vgain, companyName, drillingCrewName, tw, shen, alfa, fai, 0, ss, dens);
@@ -241,8 +252,28 @@ namespace 石油专家管理系统.forms
                 {
                     if (ss != "gas")
                     {
+                        /// <summary>
+                        /// 直井-----空井---4倍（油 油水 地层水）---压回法
+                        /// </summary>
                         double D = douZtSize * (douWellEyeKDL + 1);
                         Pressure_back_killing s = new Pressure_back_killing(yy, yy, xx, ss, dep, pd, pa, D, douZgOutterDiameter, vgain, douZjyDensity, douZjyPL, ztl, x2, tgxDep, x1);
+                        s.Pressure_back_4Time();
+                        double patmax = s.getPatmax();//最大套压------输出3   //最大施工泵压 // Pat（1）
+                        double vyj = s.getVyj(); //压井泥浆量，4倍。输出
+                        double tyj = s.gettyj();//压井施工时间，输出
+                        List<double> pat = s.getPat();//套压变化数组，需要画图,数组画出来就ok（随脚标）------输出1
+                        List<double> atyj = s.getatyj(); //压井施工时间---new add ------------输出 --画图 
+                        double Qyj = s.getQyj();     //压井排量------输出2
+                        double yjden = s.getyjden(); //压井液密度 kg/m^3------输出5  
+                        double t2 = s.gett2();//漏失完水的时间，输出，画图（4倍压回法时用，见流程图）
+                        double t1 = s.gett1();//压缩气的时间，输出，画图（钻进时压回法用，见流程图） ----
+                        double Pderta = s.getPderta();  //渗流阻力，Mpa-----输出（4倍时用，见流程图）
+                        double pat1 = pat.Max();
+                        double pp = s.getPP();
+
+                        Form13 f = new Form13(yy, dep, douZjyDensity, douZjyPL, pd, pa, yjden, Qyj, pat1, atyj, ss, pp, vyj, tyj, pat, t1, t2);
+
+
                     }
                     else if ((ss == "gas" && radioButton3.Checked == true) || ss == "gas" && radioButton8.Checked == true)
                     {
