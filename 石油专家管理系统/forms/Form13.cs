@@ -60,18 +60,26 @@ namespace 石油专家管理系统.forms
             chart1.ChartAreas[0].AxisX.LabelStyle.Format = "";
             chart1.ChartAreas[0].AxisY.LabelStyle.Format = "";
             chart1.ChartAreas[0].AxisY.LabelStyle.IsEndLabelVisible = true;
-            double time3 =Math.Ceiling(atyj.Max());
-            
+            double time3 =atyj.Max();
+            time3 = Math.Ceiling(time3);
             double pit = pat.Max();
-       
+            while (time3 % 5 != 0)
+            {
+                time3++;
+            }
+
             pit = Math.Ceiling(pit);
-       
+            while (pit % 5 != 0)
+            {
+                pit++;
+            }
+            pit = pit + 5;
             chart1.ChartAreas[0].AxisX.Minimum = 0;
-            chart1.ChartAreas[0].AxisX.Maximum = Math.Ceiling(time3);
+            chart1.ChartAreas[0].AxisX.Maximum = time3;
             chart1.ChartAreas[0].AxisY.Minimum = 0;
-            chart1.ChartAreas[0].AxisY.Maximum = Math.Ceiling(pit);
-            chart1.ChartAreas[0].AxisX.Interval = Math.Ceiling(time3) / 5;
-            chart1.ChartAreas[0].AxisY.Interval = Math.Ceiling(pit) / 5;
+            chart1.ChartAreas[0].AxisY.Maximum = pit;
+            chart1.ChartAreas[0].AxisX.Interval = time3 / 5;
+            chart1.ChartAreas[0].AxisY.Interval = pit / 5;
             chart1.Series.Add("套压曲线");
             chart1.Series["套压曲线"].ChartType = SeriesChartType.Line;
             chart1.Series["套压曲线"].Color = Color.Red;
@@ -91,6 +99,11 @@ namespace 石油专家管理系统.forms
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
         {
 
         }

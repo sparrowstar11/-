@@ -98,5 +98,10 @@ namespace 石油专家管理系统
             f1.panel6.Controls.Add(s);
            s.Show();            
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

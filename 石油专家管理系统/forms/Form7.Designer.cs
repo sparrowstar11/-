@@ -244,12 +244,12 @@
             // 
             this.button1.BackColor = System.Drawing.Color.AliceBlue;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(406, 345);
+            this.button1.Location = new System.Drawing.Point(426, 345);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 35);
+            this.button1.Size = new System.Drawing.Size(104, 35);
             this.button1.TabIndex = 20;
-            this.button1.Text = "压井计算";
+            this.button1.Text = "下一步";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

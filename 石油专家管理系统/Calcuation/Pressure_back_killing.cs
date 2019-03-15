@@ -167,7 +167,7 @@ namespace 石油专家管理系统.Calcuation
         public Pressure_back_killing(string strWellID, string strProjID, string strWellType, string oiltype,
                                      double h, double Pd, double Pa, double D,
                                      double Dp, double Vgain, double zjden, double Qzj, double ztl,
-                                     double Pbs, double hshoe, double douJkEdYl, double Dly)
+                                     double Pbs, double hshoe, double douJkEdYl,double dly)
         {
             this.strWellNo = strWellID;
             this.strProjID = strProjID;
@@ -184,7 +184,7 @@ namespace 石油专家管理系统.Calcuation
             this.Pbs = Pbs;
             this.hshoe = hshoe;
             this.douJkEdYl = douJkEdYl;//井口耐压值
-            this.Dly = Dly;
+            this.Dly = D;
 
 
         }
@@ -485,8 +485,7 @@ namespace 石油专家管理系统.Calcuation
         /// <param name="Pat"></param>
         /// <param name="Patmax"></param> 
         /// <param name="Vyj">压井泥浆量 m^3</param>  
-        /// <param name="Pderta">渗流阻力 Mpa</param>   
-        
+        /// <param name="Pderta">渗流阻力 Mpa</param>      
         public void Pressure_back_4Time()
         {
 
@@ -499,30 +498,24 @@ namespace 石油专家管理系统.Calcuation
             double rw = (D / 2) / 1000; //井眼半径
             double hh = 10;  //储层厚度，m
 
-            //double Pp = 0;     //地层压力 Pa ,更改为计算，钻进根据Pd计算，落鱼和起下钻可根据 Pa 估算。
-            //double pc = 0;    //单位深度循环压耗  Pa/m         
-
-
-            //List<double> vt = new List<double>();
-            // List<double> pt = new List<double>();
-
-            //-------------------------计算-------------------------
-            //pc = pcd / hd;  //单位深度循环压耗  Pa/m
-            // Cdpca = Math.PI * (Math.Pow(D / 1000, 2) - Math.Pow(Dp / 1000, 2)) / 4;  //单位长度环空体积        
-            //Cdpca = Math.PI * (Math.Pow(D / 1000, 2)) / 4;  //单位长度井眼容积 ，下部
-
-            Pderta = (Qyj * 1000) * u * Math.Log(re / rw) / (2 * PI * K * hh) * 1000000;  //+++++++++++
-
-            this.Qyj = Qzj / 2;   //压井排量-------------具体取值需要依据现场。
+            this.Qyj = Qzj / 2000;   //压井排量-------------具体取值需要依据现场。
+            Pderta = (Qyj * 10000) * u * Math.Log(re / rw) / (2 * PI * K * hh);  //+++++++++++
             Pp = zjden * g * h;   //地层压力 Pa          
             this.yjden = zjden;              //压回法压井液密度 Kg/m^3
 
-            //直接进入第二阶段，开始漏失，假定以压井排量漏失           
-            Pat.Add(Pa + Pderta);
-            Patmax = Pat[0];
+            //直接进入第二阶段，开始漏失，假定以压井排量漏失 
             t2 = Vgain / Qyj;   //漏失完需要的时间                     
             Vyj = Vgain * 4;  //压井泥浆量，4倍。输出                
             this.tyj = Vyj / Qyj;  //压井施工时间，输出
+            Pat.Add(Pa + Pderta);
+            atyj.Add(0);
+            Pat.Add(Pa + Pderta);
+            atyj.Add(tyj);
+            
+
+            Patmax = Pat.Max();//最大套压值
+
+
             //停泵 套压为0  再用工程师法压井 循环钻井液.  
 
         }
@@ -577,9 +570,9 @@ namespace 石油专家管理系统.Calcuation
             Cdpca1 = Math.PI * (Math.Pow(D / 1000, 2) - Math.Pow(Dp / 1000, 2)) / 4;  //单位长度井眼环空容积 ，上部
             Cdpca2 = Math.PI * (Math.Pow(D / 1000, 2)) / 4;  //单位长度井眼容积 ，下部
             if (ztl == 0) { Cdpca1 = Cdpca2; }  //空井，按井眼算。
-            Pderta = (Qyj * 1000) * u * Math.Log(re / rw) / (2 * PI * K * hh) * 1000000;
+            Pderta = (Qyj * 10000) * u * Math.Log(re / rw) / (2 * PI * K * hh);
             this.Qyj = Qzj / 2;   //压井排量-------------具体取值需要依据现场。
-            Pp = zjden * g * h;   //地层压力 Pa   
+            Pp = Pd+zjden * g * h;   //地层压力 Pa   
             hg = Vgain / Cdpca2;   //气体高度（长度） m   ，假设低于钻头位置
             //初始时钻井液垂深
             this.yjden = zjden + 0.05;              //压回法压井液密度 Kg/m^3  0.05为h2s安全值
@@ -587,40 +580,35 @@ namespace 石油专家管理系统.Calcuation
             V2 = (Pa + zjden * g * (h - hg)) * Vgain / (Pp);    //达到地层压力时,气体体积
             this.t1 = (Vgain - V2) / Qyj;  //第一阶段时间 气体量不变 p1*v1=p2*v2
 
-
             pt.Add(Pa + zjden * g * (h - hg));
-
             vt.Add(Vgain);
-
             Pat.Add(Pa); //初值对应0时刻i从1算
-
+            atyj.Add(0);
+            int i;
             //第一阶段，压缩阶段。
-            for (int i = 1; i <= Math.Floor(t1); i++)
+            for ( i = 1; i <= Math.Floor(t1); i++)
             {
                 vt.Add(vt[i - 1] - Qyj);//vt[i]=vt[i-1]-Qyj;
                 pt.Add(pt[i - 1] * vt[i - 1] / vt[i]);// pt[i]=pt[i-1]*vt[i-1]/vt[i];
                 Pat.Add(pt[i] - zjden * g * ((h - hg) - Qyj * i / Cdpca1 + Qyj * i / Cdpca2) - yjden * g * Qyj * i / Cdpca1);   //压井时的套压
+                atyj.Add(i);
             }
             Pat.Add(Pa + Pderta);
+            atyj.Add(i + 1);
 
             //第二阶段开始漏失 假定以压井排量漏失
             this.t2 = V2 / Qyj;   //漏失完需要的时间
-
-            Patmax = Pat[0];  //输出
-            for (int i = 1; i <= 1 + t1; i++)
-            {
-                if (Pat[i] > Patmax)
-                {
-                    this.Patmax = Pat[i];
-                }
-            }
-
-            Vyj = Vgain * 8;  //压井泥浆量，4倍。输出                
+            Vyj = Vgain * 8;  //压井泥浆量，8倍。输出                
             this.tyj = Vyj / Qyj;  //压井施工时间，输出
+
             //假设8倍压入后，压井液都还没到ztl位置
             Pat.Add(Pderta + Pp - yjden * g * Vgain / Cdpca1 - zjden * g * (h - Vgain / Cdpca1));  //一倍时
-            Pat.Add(Pderta + Pp - yjden * g * Vyj / Cdpca1 - zjden * g * (h - Vyj / Cdpca1));  //八倍时
+            atyj.Add(t1 + 1 + t2);
 
+            Pat.Add(Pderta + Pp - yjden * g * Vyj / Cdpca1 - zjden * g * (h - Vyj / Cdpca1));  //八倍时
+            atyj.Add(tyj);
+
+            Patmax = Pat.Max();  //输出最大套压
             //停泵 套压为0  再用工程师法压井 循环钻井液.    
 
         }

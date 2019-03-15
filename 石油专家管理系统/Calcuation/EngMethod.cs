@@ -1000,196 +1000,183 @@ namespace 石油专家管理系统.Calcuation
             }
 
 
+        /// <summary>
+        /// 工程师法压井 ---- 起下钻能配置钻井液情况下,直井定向井通用。8.28-------------
+        /// </summary>
+        /// <param name="D">井眼直径</param>
+        /// <param name="Dp">钻杆外径</param>
+        /// <param name="hd">hd=3000，低泵速实验井深m</param>
+        /// <param name="pcd">pcd=6320000，低泵速情况下循环压耗 Pa</param>
+        /// <param name="Qzj">钻井排量</param>
+        /// <param name="ztl">钻头位置井深</param>
+        /// 
+        /// 输入也参与输出：
+        /// <param name="Pa">管井套压，用于画图</param>，
+        /// <param name="yjden">压井液密度，用户输入，判断能配置后传递下来</param>----输出
+        /// 
+        /// 输出：
+        /// <param name="t1">第一阶段时间，用于画图，不输出</param>
+        /// <param name="tyj">压井施工时间</param>----输出
+        /// <param name="Qyj">压井施工排量</param>----输出
+        /// <param name="Ppc">终了循环压力</param>----输出
+        /// <param name="Vyj">压井施工泥浆量</param>----输出
+        /// 
+        /// 曲线：（时间，压力）点1（0，Pa），点2（t1，Pa），点3（t1，Ppc），点4（tyj，Ppc）连成折线。 
+        public void EngMethod_QiXiaZuan_Small(double ztl, ref double t1, ref double tyj, ref double Qyj, ref double Ppc, ref double Vyj, double Userden)
+        {
+            //----------定义变量(变量必须先定义再使用)，赋初值---------------         
+
+            double pc = 0;    //单位深度循环压耗  Pa/m 
+            double Cdpca1 = 0;   //单位长度井眼容积容积，外
+            double Cdpca2 = 0;   //单位长度井眼容积容积，内 
+
+            //------------------------------------------------输出1，压井液密度， Userden
+
+            //在此须先调用ZJZH函数计算钻杆内外容积！！！！！！！！！！！！！！！！！！！
+            double szjvi = 0;
+            double szjvo = 0;
+            ZJZH(ref szjvi, ref szjvo);
 
 
+            double Vdz = szjvi;                     //钻杆内容积----szjvi，由钻具组合计算得          
+            double vh = PI * (Math.Pow((D / 1000), 2)) / 4;        //单位长度套管段容积不含钻杆
+            double vly = PI * (Math.Pow((Dly / 1000), 2)) / 4;     //单位长度裸眼段容积不含钻杆
+            double vhz = vh * htx + vly * hly;           //环空总容积不含钻杆
+            double vhz1 = vhz - szjvo;                   //环空总容积减去钻杆szjvo，钻具组合计算得来
+            double vjt = Vdz + vhz1;                     //井筒总容积
 
-            /// <summary>
-            /// 工程师法压井 ---- 起下钻能配置钻井液情况下,直井定向井通用。8.28-------------
-            /// </summary>
-            /// <param name="D">井眼直径</param>
-            /// <param name="Dp">钻杆外径</param>
-            /// <param name="hd">hd=3000，低泵速实验井深m</param>
-            /// <param name="pcd">pcd=6320000，低泵速情况下循环压耗 Pa</param>
-            /// <param name="Qzj">钻井排量</param>
-            /// <param name="ztl">钻头位置井深</param>
-            /// 
-            /// 输入也参与输出：
-            /// <param name="Pa">管井套压，用于画图</param>，
-            /// <param name="yjden">压井液密度，用户输入，判断能配置后传递下来</param>----输出
-            /// 
-            /// 输出：
-            /// <param name="t1">第一阶段时间，用于画图，不输出</param>
-            /// <param name="tyj">压井施工时间</param>----输出
-            /// <param name="Qyj">压井施工排量</param>----输出
-            /// <param name="Ppc">终了循环压力</param>----输出
-            /// <param name="Vyj">压井施工泥浆量</param>----输出
-            /// 
-            /// 曲线：（时间，压力）点1（0，Pa），点2（t1，Pa），点3（t1，Ppc），点4（tyj，Ppc）连成折线。 
-            public void EngMethod_QiXiaZuan_Small(double ztl, ref double t1, ref double tyj, ref double Qyj, ref double Ppc, ref double Vyj)
+            //环空钻具均值处理
+            double Spav = szjvo / h;               //钻杆平均截面积--
+            double Dpav = Math.Sqrt(Spav * 4 / PI);     //钻杆平均外径--开方          
+            vlyz = (vly - Spav) * hly;      //裸眼段环空体积
+            double vth = (vh - Spav) * htx;        //套管段的容积
+            double vlys = vly - Spav;              //减去钻杆后的裸眼截面积--
+            double vhs = vh - Spav;                //减去钻杆后的套管截面积-
+                                                   //-------------------------计算---------------
+
+            pc = pcd / hd;  //单位深度循环压耗  Pa/m 
+            Ppc = pc * Userden / Pm * ztl;  //-------------------------------------------------输出5，终了循环压压力
+
+            Cdpca1 = Math.PI * (Math.Pow(D / 1000, 2) - Math.Pow(Dp / 1000, 2)) / 4; //单位长度环空体积,外
+            Cdpca2 = Math.PI * (Math.Pow(Dp / 1000, 2)) / 4;  //单位长度环空体积,内       
+            Qyj = (qn / 1000) / 2;   //-----------------------------------------------------输出2，压井排量
+            t1 = Vdz / Qyj / 60;  //Cdpca2 * ztl / Qyj;
+            tyj = vhs * ztl / Qyj / 60;   //t1 + Cdpca1 * ztl / Qyj;
+            Vyj = Vdz + vhs * ztl;//--------------------------------------------------输出3，压井泥浆量
+            this.Vyj = Vyj;
+            this.tyj = tyj + t1;//--------------------------------------------------输出4，压井时间
+            this.Ppc = Ppc;
+            this.Vdz = Vdz;
+            this.vhz1 = vhz1;
+
+        }
+
+
+        /// <summary>
+        /// 工程师压井法----------小工程师之后，适用油水&气，适用直井&定向井。8.28------------
+        /// </summary>
+        /// 
+        /// 画图：（时间，立压）点（0，Pd0），点（T1，Pd1）,点（Tz，Pd1）连成线
+
+        public void EngMethod_QiXiaZuan_Big(int NT1, double userZyjDens, double ztl,
+                                            ref double Q, ref double T1, ref double Tz,ref double pp,
+                                            ref double Pd0, ref double Pd1)
+        {
+
+            //---------------------------------------------------------传入数据
+            //int NT1 = 300;     //NT1
+            //double pm1 = 1.5;  //!压井泥浆密度,g/cm3---------------来源于小工程师法输入   
+            //double qn = 0.35;  //钻井排量，m3/s
+            //double D = 215.9;  //井眼直径，mm
+            //double Dp = 127;   //钻杆直径，mm
+            //double zjden = 1.2;//
+            //double Pm = zjden;  //钻井液密度，
+            //double htx = 1000;  //套管鞋深度，m
+            //double deltd = 7.5;  //钻杆壁厚，mm
+            //double pcd =30 ;    //低泵速实验压力，Mpa
+            //double hd=1000;  //低泵速实验井深，m
+
+            //double Q = 0;// !压井排量---------------------------------------上步传入不变--------输出数据，3
+            //double T1 = 0;  //轻泥浆循环到井底时间,min---------
+            //double Tz = 0;  //压井施工时间,min--------------------------------------------------输出数据，4
+            //double pp = 0;//地层压力，Mpa-------------------------------------------------------输出数据，1
+            //double Pd0 = 0;//初始循环压力，Mpa--------------------------------------------------输出数据，6
+            //double Pd1 = 0;//终了循环压力，Mpa--------------------------------------------------输出数据，5
+
+            double pm1 = userZyjDens;  //压井液密度g/cm3----------------------------上步传入不变，输出数据，2
+
+            //在此须先调用ZJZH函数计算钻杆内外容积！！！！！！！！！！！！！！！！！！！
+            double szjvi = 0;
+            double szjvo = 0;
+            ZJZH(ref szjvi, ref szjvo);
+
+
+            double Vdz = szjvi;                     //钻杆内容积-------------------------------------------------szjvi，由钻具组合计算得          
+            double vh = PI * (Math.Pow((D / 1000), 2)) / 4;        //单位长度套管段容积不含钻杆
+            double vly = PI * (Math.Pow((Dly / 1000), 2)) / 4;     //单位长度裸眼段容积不含钻杆
+            double vhz = vh * htx + vly * hly;           //环空总容积不含钻杆
+            double vhz1 = vhz - szjvo;                   //环空总容积减去钻杆******  -----------------------szjvo，钻具组合计算得来
+            double vjt = Vdz + vhz1;                     //井筒总容积
+
+            //环空钻具均值处理
+            double Spav = szjvo / h;			   //钻杆平均截面积--
+            double Dpav = Math.Sqrt(Spav * 4 / PI);     //钻杆平均外径------------------------------开方          
+            vlyz = (vly - Spav) * hly;      //裸眼段环空体积
+            double vth = (vh - Spav) * htx;        //套管段的容积
+            double vlys = vly - Spav;              //减去钻杆后的裸眼截面积-------------fortran里单独为vlys
+            double vhs = vh - Spav;                //减去钻杆后的套管截面积-------------fortran里单独为vhs
+
+
+            double Vdzl = Vdz + (h - ztl) * Math.Pow((Dp - 2 * deltd), 2) / 1000000 * PI / 4;
+            //------------------------------计算-------------------------- 
+            double Gm1 = pm1 * 0.0098;
+            double Gm = 0.0098 * Pm;
+
+            T1 = Vdzl / Q / 60;  //轻泥浆循环到井底时间,min
+            Tz = (vhz - szjvo - (h - ztl) * Math.Pow((Dp), 2) * PI / 4 / 1000000) / Q / 60;  //压井施工时间,min
+
+            jtzrj = (vhz - szjvo - (h - ztl) * Math.Pow((Dp), 2) * PI / 4 / 1000000);//井筒总容积
+
+            double pc0 = pcd / hd;  //钻井液单位井深循环压耗
+            double pc1 = pc0 * Gm1 / Gm;  //压井液单位井深循环压耗
+            double Ppc0 = pc1 * ztl + pc0 * (h - ztl);//混合压耗
+            double Ppc1 = pc0 * h;//钻井液压耗
+            int m1 = 0;
+
+            if (strWellType == "定向井")
             {
-                //----------定义变量(变量必须先定义再使用)，赋初值---------------         
-
-                double pc = 0;    //单位深度循环压耗  Pa/m 
-                double Cdpca1 = 0;   //单位长度井眼容积容积，外
-                double Cdpca2 = 0;   //单位长度井眼容积容积，内 
-
-                //在此须先调用ZJZH函数计算钻杆内外容积！！！！！！！！！！！！！！！！！！！
-                double szjvi = 0;
-                double szjvo = 0;
-                ZJZH(ref szjvi, ref szjvo);
-
-
-                double Vdz = szjvi;                     //钻杆内容积-------------------------------------------------szjvi，由钻具组合计算得          
-                double vh = PI * (Math.Pow((D / 1000), 2)) / 4;        //单位长度套管段容积不含钻杆
-                double vly = PI * (Math.Pow((Dly / 1000), 2)) / 4;     //单位长度裸眼段容积不含钻杆
-                double vhz = vh * htx + vly * hly;           //环空总容积不含钻杆
-                double vhz1 = vhz - szjvo;                   //环空总容积减去钻杆******  -----------------------szjvo，钻具组合计算得来
-                double vjt = Vdz + vhz1;                     //井筒总容积
-
-                //环空钻具均值处理
-                double Spav = szjvo / h;               //钻杆平均截面积--
-                double Dpav = Math.Sqrt(Spav * 4 / PI);     //钻杆平均外径------------------------------开方          
-                vlyz = (vly - Spav) * hly;      //裸眼段环空体积
-                double vth = (vh - Spav) * htx;        //套管段的容积
-                double vlys = vly - Spav;              //减去钻杆后的裸眼截面积-------------fortran里单独为vlys
-                double vhs = vh - Spav;                //减去钻杆后的套管截面积-------------fortran里单独为vhs
-                                                       //-------------------------计算-------------------------
-                if (strWellType == "定向井")
+                double hh = ztl;//转ztl
+                for (int i = 1; i <= NT1; i++)
                 {
-                    hcs = TW[NT1, 6];
-                    pp = Pm * 0.00981 * hcs;
-                }
-                else
-                {
-                    pp = Pm * 0.00981 * h;
-                }
-
-                pc = pcd / hd;  //单位深度循环压耗  Pa/m 
-                Ppc = pc * ztl;  //循环压耗
-
-                Cdpca1 = Math.PI * (Math.Pow(D / 1000, 2) - Math.Pow(Dp / 1000, 2)) / 4;  //单位长度环空体积,外
-                Cdpca2 = Math.PI * (Math.Pow(Dp / 1000, 2)) / 4;  //单位长度环空体积,内       
-                Qyj = (qn / 1000) / 2;   //压井排量
-                t1 = Vdz / Qyj / 60;  //Cdpca2 * ztl / Qyj;
-                tyj = vhs * ztl / Qyj / 60;   //t1 + Cdpca1 * ztl / Qyj;
-                Vyj = Vdz + vhs * ztl;
-                this.Vyj = Vyj;
-                this.tyj = tyj;
-                this.Ppc = Ppc;
-                this.Vdz = Vdz;
-                this.vhz1 = vhz1;
-
-
-            }
-
-
-            /// <summary>
-            /// 工程师压井法----------小工程师之后，适用油水&气，适用直井&定向井。8.28------------
-            /// </summary>
-            /// 
-            /// 画图：（时间，立压）点（0，Pd0），点（T1，Pd1）,点（Tz，Pd1）连成线
-
-            public void EngMethod_QiXiaZuan_Big(int NT1, double userZyjDens, double ztl,
-                                                ref double Q, ref double T1, ref double Tz,
-                                                ref double pp, ref double Pd0, ref double Pd1)
-            {
-
-                //---------------------------------------------------------传入数据
-                //int NT1 = 300;     //NT1
-                //double pm1 = 1.5;  //!压井泥浆密度,g/cm3---------------来源于小工程师法输入   
-                //double qn = 0.35;  //钻井排量，m3/s
-                //double D = 215.9;  //井眼直径，mm
-                //double Dp = 127;   //钻杆直径，mm
-                //double zjden = 1.2;//
-                //double Pm = zjden;  //钻井液密度，转换g/cm3----------------------------作为压井泥浆密度，输出数据，2
-                //double htx = 1000;  //套管鞋深度，m
-                //double deltd = 7.5;  //钻杆壁厚，mm
-                //double pcd =30 ;    //低泵速实验压力，Mpa
-                //double hd=1000;  //低泵速实验井深，m
-
-                //double Q = 0;// !压井排量---------------------------------------------------------------输出数据，3
-                //double T1 = 0;  //轻泥浆循环到井底时间,min------------------作图
-                //double Tz = 0;  //压井施工时间,min--------------------------作图------------------------输出数据，7
-                //double pp = 0;//地层压力，Mpa-----------------------------------------------------------输出数据，1
-                //double Pd0 = 0;//初始循环压力，Mpa--------------------------作图------------------------输出数据，4
-                //double Pd1 = 0;//终了循环压力，Mpa--------------------------作图------------------------输出数据，5
-
-                double pm1 = userZyjDens;
-
-                //在此须先调用ZJZH函数计算钻杆内外容积！！！！！！！！！！！！！！！！！！！
-                double szjvi = 0;
-                double szjvo = 0;
-                ZJZH(ref szjvi, ref szjvo);
-
-
-                double Vdz = szjvi;                     //钻杆内容积-------------------------------------------------szjvi，由钻具组合计算得          
-                double vh = PI * (Math.Pow((D / 1000), 2)) / 4;        //单位长度套管段容积不含钻杆
-                double vly = PI * (Math.Pow((Dly / 1000), 2)) / 4;     //单位长度裸眼段容积不含钻杆
-                double vhz = vh * htx + vly * hly;           //环空总容积不含钻杆
-                double vhz1 = vhz - szjvo;                   //环空总容积减去钻杆******  -----------------------szjvo，钻具组合计算得来
-                double vjt = Vdz + vhz1;                     //井筒总容积
-
-                //环空钻具均值处理
-                double Spav = szjvo / h;               //钻杆平均截面积--
-                double Dpav = Math.Sqrt(Spav * 4 / PI);     //钻杆平均外径------------------------------开方          
-                vlyz = (vly - Spav) * hly;      //裸眼段环空体积
-                double vth = (vh - Spav) * htx;        //套管段的容积
-                double vlys = vly - Spav;              //减去钻杆后的裸眼截面积-------------fortran里单独为vlys
-                double vhs = vh - Spav;                //减去钻杆后的套管截面积-------------fortran里单独为vhs
-
-
-                double Vdzl = Vdz + (h - ztl) * Math.Pow((Dp - 2 * deltd), 2) / 1000000 * PI / 4;
-                //------------------------------计算-------------------------- 
-                Q = (qn / 1000) / 3;// !压井排量              
-                                    //            double Vd = PI * (Math.Pow(((Dp - 2 * deltd) / 1000), 2)) / 4;
-                                    //            double vh = PI * (Math.Pow((D / 1000), 2) - Math.Pow((Dp / 1000), 2)) / 4;
-                double Gm1 = pm1 * 0.0098;
-                double Gm = 0.0098 * Pm;
-
-                T1 = Vdzl / Q / 60;  //轻泥浆循环到井底时间,min
-                Tz = (vhz - szjvo - (h - ztl) * Math.Pow((Dp), 2) * PI / 4 / 1000000) / Q / 60;  //压井施工时间,min
-
-                jtzrj = (vhz - szjvo - (h - ztl) * Math.Pow((Dp), 2) * PI / 4 / 1000000);//井筒总容积
-
-                double pc0 = pcd / hd;  //钻井液单位井深循环压耗
-                double pc1 = pc0 * Gm1 / Gm;  //压井液单位井深循环压耗
-                double Ppc0 = pc1 * ztl + pc0 * (h - ztl);//混合压耗
-                double Ppc1 = pc0 * h;//钻井液压耗
-                int m1 = 0;
-                if (strWellType == "定向井")
-                {
-                    double hh = ztl;//转ztl
-                    for (int i = 1; i <= NT1; i++)
+                    if (TW[i, 1] >= hh)
                     {
-                        if (TW[i, 1] >= hh)
-                        {
-                            m1 = i;
-                            break;
-                        }
+                        m1 = i;
+                        break;
                     }
-                    ztl = (TW[m1, 6] - (TW[m1, 1] - hh) * Math.Cos(TW[m1, 2]));
-                    h = TW[NT1, 6];
                 }
-                pp = 0.0098 * Pm * h;//地层压力------------------------------------
-                Pd0 = pp - Gm1 * ztl - Gm * (h - ztl) + Ppc0;//初始循环压力----------
-                Pd1 = pp - Gm * h + Ppc1;//终了循环压力-------------------------
-
-                this.pm1 = pm1;
-                this.Q = Q;
-                this.Ppc0 = Ppc0;
-                this.pp = pp;
-                this.T1 = T1;
-                this.Tz = Tz;
-                this.Pd0 = Pd0;
-                this.Pd1 = Pd1;
-                //钻具内容积等赋值-----------------------
-
-                this.Vdz = Vdz;
-                this.vhz1 = vhz1;
-                this.vjt = vjt;
-
+                ztl = (TW[m1, 6] - (TW[m1, 1] - hh) * Math.Cos(TW[m1, 2]));
+                h = TW[NT1, 6];
             }
 
+            pp = 0.0098 * Pm * h;//地层压力------------------------------------
+            Pd0 = pp - Gm1 * ztl - Gm * (h - ztl) + Ppc0;//初始循环压力----------
+            Pd1 = pp - Gm * h + Ppc1;//终了循环压力-------------------------
+
+            this.pm1 = pm1;
+            this.Q = Q;
+            this.Ppc0 = Ppc0;
+            this.pp = pp;
+            this.T1 = T1;
+            this.Tz = Tz;
+            this.Pd0 = Pd0;
+            this.Pd1 = Pd1;
+            //钻具内容积等赋值-----------------------
+
+            this.Vdz = Vdz;
+            this.vhz1 = vhz1;
+            this.vjt = vjt;
+
+        }
 
 
 
@@ -1201,16 +1188,20 @@ namespace 石油专家管理系统.Calcuation
 
 
 
-            /// <summary>
-            ///钻具组合求钻杆内外体积,EngYL_ZJ用到，里面有些变量没来的及定义
-            /// </summary>
-            /// <param name="NT2"></param>钻具组合组数
-            /// <param name="ZJI"></param>钻杆内径,mm
-            /// <param name="ZJO"></param>钻杆外径,mm
-            /// <param name="ZJL"></param>钻杆长度，m
-            /// <param name="szjvi"></param>累加得钻具内体积-----------输出
-            /// <param name="szjvo"></param>累加得钻具外体积-----------输出
-            public void ZJZH(ref double szjvi, ref double szjvo)
+
+
+
+
+        /// <summary>
+        ///钻具组合求钻杆内外体积,EngYL_ZJ用到，里面有些变量没来的及定义
+        /// </summary>
+        /// <param name="NT2"></param>钻具组合组数
+        /// <param name="ZJI"></param>钻杆内径,mm
+        /// <param name="ZJO"></param>钻杆外径,mm
+        /// <param name="ZJL"></param>钻杆长度，m
+        /// <param name="szjvi"></param>累加得钻具内体积-----------输出
+        /// <param name="szjvo"></param>累加得钻具外体积-----------输出
+        public void ZJZH(ref double szjvi, ref double szjvo)
             {
                 double tempZJVI = 0;
                 double tempZJVO = 0;

@@ -9,7 +9,7 @@ namespace 石油专家管理系统.Fluidtype
     {
         public static string JudeEarthTypeUnderZuanJing2(string strWellID, string strWellType, double douWellDepth, double douTgxDepth, double douZjyDensity,
                                                double douGjLy, double douGjTy, double douNjcZl, double douZtSize, double douWellEyeKDL,
-                                               double douZgOutterDiameter, double douTgDiameter, double[,] TW, int NT, ref double dens)
+                                               double douZgOutterDiameter, double douTgDiameter, double[,] TW, int NT, ref double dens ,ref double hg)
         {
             double Pm;//钻井液密度
             double h;//井深
@@ -73,6 +73,7 @@ namespace 石油专家管理系统.Fluidtype
             }
             double Dens = Pm - (Pa - Pd) / 0.00981 / hw;//溢流密度计算
             dens = Dens;
+            hg = hw;
             if ((Dens >= 0.12) && (Dens < 0.36))//溢流为天然气----------------------------------
             {
                 return "gas";

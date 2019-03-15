@@ -59,8 +59,11 @@
   <ItemGroup>
     <Compile Include="AutoSizeFormClass.cs" />
     <Compile Include="Calcuation\EngMethod.cs" />
+    <Compile Include="Calcuation\isZjyDensityConfigJudge.cs" />
     <Compile Include="Calcuation\MathCompute.cs" />
     <Compile Include="Calcuation\Pressure_back_killing.cs" />
+    <Compile Include="Calcuation\ReplacementMethod.cs" />
+    <Compile Include="Calcuation\SZmethod.cs" />
     <Compile Include="Calcuation\WellTrace.cs" />
     <Compile Include="Fluidtype\drilling.cs" />
     <Compile Include="Fluidtype\kongjingqixiazuan.cs" />
@@ -93,6 +96,24 @@
     </Compile>
     <Compile Include="forms\Form13.Designer.cs">
       <DependentUpon>Form13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Form14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Form14.Designer.cs">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Form15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Form15.Designer.cs">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Form16.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Form16.Designer.cs">
+      <DependentUpon>Form16.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Form2.cs">
       <SubType>Form</SubType>
@@ -179,6 +200,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Form13.resx">
       <DependentUpon>Form13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Form14.resx">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Form15.resx">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Form16.resx">
+      <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>

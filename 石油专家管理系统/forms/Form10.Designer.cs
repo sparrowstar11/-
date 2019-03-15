@@ -35,18 +35,18 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("黑体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox3.Location = new System.Drawing.Point(0, 0);
+            this.textBox3.Location = new System.Drawing.Point(1, 0);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(1236, 467);
+            this.textBox3.Size = new System.Drawing.Size(1232, 422);
             this.textBox3.TabIndex = 14;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.AliceBlue;
             this.button4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(969, 468);
+            this.button4.Location = new System.Drawing.Point(874, 430);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(105, 39);
@@ -59,6 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1236, 564);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox3);

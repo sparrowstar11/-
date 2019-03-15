@@ -271,9 +271,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.GhostWhite;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(833, 5);
+            this.button1.Location = new System.Drawing.Point(853, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 35);
+            this.button1.Size = new System.Drawing.Size(89, 30);
             this.button1.TabIndex = 37;
             this.button1.Text = "保存";
             this.button1.UseVisualStyleBackColor = false;
