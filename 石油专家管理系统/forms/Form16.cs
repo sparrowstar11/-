@@ -92,7 +92,7 @@ namespace 石油专家管理系统.forms
             this.hg = hg;
             label1.Text = yjmin.ToString();
             label2.Text = yjmax.ToString();
-            MessageBox.Show(label1.ToString());
+            
            
 
         }

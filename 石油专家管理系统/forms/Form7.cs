@@ -39,9 +39,12 @@ namespace 石油专家管理系统.forms
         string no;
         double ztl;
         double hg;
+        double[] shen;
+        double[] alfa;
+        double[] fai;
         public Form7(string s, string x, string y, double dep, double tgxDep,double douWellTemp, double douTgDiameter, double douZtSize,double douWellEyeKDL, double douZjyDensity ,
             double douZjyPL,double douDrZWL,double douDbsWellDepth,double douDbsTaoya,double douDbsPL,double douZgOutterDiameter,double douZgWallThickness,double pd,double pa, 
-            double vgain, double dens,string companyName,string drillingCrewName ,double [,]tw,string no,double ztl,double hg)
+            double vgain, double dens,string companyName,string drillingCrewName ,double [,]tw,string no,double ztl,double hg,double []shen,double []alfa,double[] fai)
         {
             this.ss = s;
             xx = x;
@@ -70,6 +73,9 @@ namespace 石油专家管理系统.forms
             this.no = no;
             this.hg = hg;
             this.ztl = ztl;
+            this.shen = shen;
+            this.alfa = alfa;
+            this.fai = fai;
             InitializeComponent();
             if (ss == "null")
             {
@@ -123,7 +129,7 @@ namespace 石油专家管理系统.forms
             }
             Form14 f = new Form14( ss,  xx,  yy, dep,  tgxDep,  douWellTemp,  douTgDiameter, douZtSize, douWellEyeKDL,  douZjyDensity,
              douZjyPL,  douDrZWL,  douDbsWellDepth,  douDbsTaoya,  douDbsPL,  douZgOutterDiameter, douZgWallThickness,  pd, pa,
-           vgain,  dens,  companyName,  drillingCrewName, tw,  no,  ztl,type,hg);
+           vgain,  dens,  companyName,  drillingCrewName, tw,  no,  ztl,type,hg,shen,alfa,fai);
             f.Show();
             this.Close();
             this.Dispose();

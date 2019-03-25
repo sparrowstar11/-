@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Windows.Forms;
+using 石油专家管理系统.forms;
 namespace 石油专家管理系统.Calcuation
 {
     /// <summary>
@@ -13,12 +14,12 @@ namespace 石油专家管理系统.Calcuation
     class WellTrace
     {
         private string strWellNo;//井号
-        private double[] SHEN;//井深
-        private double[] ALFA;//井斜角
-        private double[] FAI;//方位角
-        private double[,] TW;//井眼轨迹计算结果
-        private int NT;//轨井迹的行数
-        private int NT1;// 离散个数，固定值 300？
+        public double[] SHEN;//井深
+        public double[] ALFA;//井斜角
+        public double[] FAI;//方位角
+        public double[,] TW;//井眼轨迹计算结果
+        public int NT;//轨井迹的行数
+        public int NT1;// 离散个数，固定值 300？
 
         private double ALFA0D = 0.0;
         private double ALFAND = 0.0;
@@ -38,7 +39,7 @@ namespace 石油专家管理系统.Calcuation
         public WellTrace(string WellNo)
         {
             this.strWellNo = WellNo;
-            this.readWellTraceDatafromDB(strWellNo);
+          //  this.readWellTraceDatafromDB(strWellNo);
         }
 
         /// <summary>
@@ -49,21 +50,35 @@ namespace 石油专家管理系统.Calcuation
         {
 
             this.strWellNo = WellNo;
-            DataTable dtWellNo = SQLHelper.ExecuteDataTable(SQLHelper.CommonSql.strSelectWellTraceCount + "'" + WellNo + "'");
-            NT = int.Parse(dtWellNo.Rows[0]["WellTraceCount"].ToString()); //行数
-            SHEN = new double[NT + 1];//计算从下标1开始 
+            string s1 = "select 井深 from [dbo].[Sheet3$] where 工程编号='" + strWellNo + "'";
+            string s2 = "select 井斜角 from [dbo].[Sheet3$]where 工程编号='" + strWellNo + "'";
+            string s3 = "select 方位角 from [dbo].[Sheet3$]where 工程编号='" + strWellNo + "'";
+            DataSet x1 = SQLHelper.read(s1);
+            DataSet x2 = SQLHelper.read(s2);
+            DataSet x3 = SQLHelper.read(s3);
+            NT = x1.Tables[0].Rows.Count-1;
+            SHEN = new double[NT+1];
             ALFA = new double[NT + 1];
             FAI = new double[NT + 1];
-            DataTable dtWellData = SQLHelper.ExecuteDataTable(SQLHelper.CommonSql.strSelectWellTrace + "'" + WellNo + "'");
-            //遍历datatable 
-            for (int i = 0; i < dtWellData.Rows.Count; i++)
+            int index=0;
+           
+            while (index < NT+1)
             {
-                SHEN[i+1] = double.Parse(dtWellData.Rows[i]["WellDepth"].ToString());//井深
-                ALFA[i+1] = double.Parse(dtWellData.Rows[i]["WellHoleAngle"].ToString());//井斜角
-                FAI[i+1] = double.Parse(dtWellData.Rows[i]["WellAngle"].ToString());//方位角
+                SHEN[index] = Convert.ToDouble(x1.Tables[0].Rows[index]["井深"]);
+                ALFA[index] = Convert.ToDouble(x2.Tables[0].Rows[index]["井斜角"]);
+                FAI[index] = Convert.ToDouble(x3.Tables[0].Rows[index]["方位角"]);
+                index++;
+
             }
+         
+         
+         
+
+
+
+
             //--------输出井眼轨迹参数到文件----------
-           // FileOpp.writeWellTraceOriginal(papath, NT, SHEN, ALFA, FAI);
+            // FileOpp.writeWellTraceOriginal(papath, NT, SHEN, ALFA, FAI);
         }
 
         /// <summary>

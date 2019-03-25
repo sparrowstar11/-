@@ -12,7 +12,7 @@ namespace 石油专家管理系统.Calcuation
         /// </summary>
    
             private const double PI = 3.1415926;
-            private const double g = 9.81;
+            private const double g = 0.00981;
 
             private string strWellNo;//井号
             private string strWellType;//井型---直井，水平井，定向井
@@ -82,9 +82,10 @@ namespace 石油专家管理系统.Calcuation
                 double x1 = 0;
                 double x2 = 0;
                 double y = 0;
-
-                //-------------------------计算-------------------------
-                Cdpca = 3.14159265 / 4 * Math.Pow(D_jy, 2);
+            D_jy = D_jy / 1000;
+            Do_zg = Do_zg / 1000;
+            //-------------------------计算-------------------------
+            Cdpca = 3.14159265 / 4 * Math.Pow(D_jy, 2);
                 Hg = V1 / Cdpca;
                 Den_yj = Pa / g / Hg;
                 P_shoe = Pa + Den_zj * g * (H_shoe - V1 / Cdpca);
@@ -111,7 +112,7 @@ namespace 石油专家管理系统.Calcuation
                         DP[i] = Den_yj * g * V[i] / Cdpca;
                         Pa = Pa - DP[i];
                         V1 = V1 - DV;
-                        Pcha[i] = PPa[i] - DP[i];
+                        Pcha[i] =Pa;
                     }
                 }
 
@@ -159,9 +160,11 @@ namespace 石油专家管理系统.Calcuation
                 double x1 = 0;
                 double x2 = 0;
                 double y = 0;
+                D_jy = D_jy / 1000;
+                Do_zg = Do_zg / 1000;
 
-                //-------------------------计算-------------------------
-                Cdpca = PI / 4 * (Math.Pow(D_jy, 2) - Math.Pow(Do_zg, 2));
+            //-------------------------计算-------------------------
+            Cdpca = PI / 4 * (Math.Pow(D_jy, 2) - Math.Pow(Do_zg, 2));
                 Hg = V1 / Cdpca;
                 Den_yj = Pa / g / Hg;
                 P_shoe = Pa + Den_zj * g * (H_shoe - V1 / Cdpca);
@@ -188,7 +191,7 @@ namespace 石油专家管理系统.Calcuation
                         DP[i] = Den_yj * g * V[i] / Cdpca;
                         Pa = Pa - DP[i];
                         V1 = V1 - DV;
-                        Pcha[i] = PPa[i] - DP[i];
+                        Pcha[i] = Pa;
                     }
                 }
 

@@ -51,7 +51,7 @@ namespace 石油专家管理系统.Calcuation
                                //套压曲线输出数组
             double[] Pat = new double[54];//套压曲线： tyjp[1-10] 与P at[1-10] 
             double[] Pdt = new double[5];//立压曲线: tyjd[1-4] 与 Pdt[1-4]
-
+        double[] pitgain = new double[54];
             double[] tyjp = new double[54];
             double[] tyjd = new double[5];
 
@@ -241,7 +241,10 @@ namespace 石油专家管理系统.Calcuation
                 return ovtime;
 
             }
-
+        public double []getpitgain()
+        {
+            return pitgain;
+        }
 
 
 
@@ -351,7 +354,7 @@ namespace 石油专家管理系统.Calcuation
 
                 Pat[0] = Pa;
                 tyjp[0] = 0;
-
+            pitgain[0] = Vgain;
 
                 //(1)司钻法第一周循环
 
@@ -395,6 +398,7 @@ namespace 石油专家管理系统.Calcuation
                     //画曲线 
                     Pat[i] = Pp - (h - hx1) * Gm - Pw;
                     tyjp[i] = Dt1 * i;
+                pitgain[i] = Vx1;
                     i++;
                 }
 
@@ -402,7 +406,7 @@ namespace 石油专家管理系统.Calcuation
                 double T2 = Vx1 / Q;
                 tyjp[i] = T1 + T2;
                 Pat[i] = pp - Gm * h;
-                // pitgain(1+N11+1)=0
+            pitgain[i] = 0;
 
                 // !排除溢流
                 double T3 = Vdz / Q;

@@ -135,7 +135,7 @@ namespace 石油专家管理系统
         double[] pax;
         double[] ptime;
         double[] pdd;
-        public Form11(double Q, double pp, double pm1, double pti, double ptf, double pamax, double pyx, double ovtime, double shigongtime, double[] pat, double[] pdt, double[] tyjp, double[] tyjd)
+        public Form11(double Q, double pp, double pm1, double pti, double ptf, double pamax, double pyx, double ovtime, double shigongtime, double[] pat, double[] pdt, double[] tyjp, double[] tyjd,double[] pitgain,int mm)
         {
             this.Q = Q;
             this.pp = pp;
@@ -213,6 +213,28 @@ namespace 石油专家管理系统
             {
                 if (pdd[i] != 0 || ptime[i] != 0)
                     chart1.Series["立管压力"].Points.AddXY(ptime[i], pdd[i]);
+            }
+            var chart0= chart2.ChartAreas[0];
+            chart0.AxisX.IntervalType = DateTimeIntervalType.Number;
+            chart0.AxisX.LabelStyle.Format = "";
+            chart0.AxisY.LabelStyle.Format = "";
+            chart0.AxisY.LabelStyle.IsEndLabelVisible = true;
+            chart0.AxisX.Minimum = 0;
+            chart0.AxisX.Maximum = tyjp.Max();
+            chart0.AxisY.Minimum = 0;
+            chart0.AxisY.Maximum = pitgain.Max();
+            chart0.AxisX.Interval = tyjp.Max() / 5;
+            chart0.AxisY.Interval = pitgain.Max ()/ 5;
+            chart2.Series.Add("泥浆池增量");
+     
+            chart2.Series["泥浆池增量"].ChartType = SeriesChartType.Line;
+            chart2.Series["泥浆池增量"].Color = Color.Red;
+         
+            chart2.Series[0].IsVisibleInLegend = false;
+            for (int i = 0; i <tyjp.Length; i++)
+            {
+                if (tyjp[i] != 0 || pitgain[i] != 0)
+                    chart2.Series["泥浆池增量"].Points.AddXY(tyjp[i], pitgain[i]);
             }
 
         }

@@ -20,19 +20,32 @@ namespace 石油专家管理系统.forms
             this.V = V;
             this.PPa = PPa;
             this.Pcha = Pcha;
-            for(int i=0;i<V.Length;i++)
+            for(int i=1;i<V.Length;i++)
             {
                 int index = this.dataGridView1.Rows.Add();
-                dataGridView1.Rows[index].Cells[0].Value = "第" + Convert.ToInt32( i+1) + "阶段";
+                dataGridView1.Rows[index].Cells[0].Value = "第" + Convert.ToInt32( i) + "阶段";
+                if (Pcha[i] < 0.01)
+                {
+                    dataGridView1.Rows[index].Cells[1].Value =V[i];
+                    dataGridView1.Rows[index].Cells[2].Value = PPa[i];
+                    dataGridView1.Rows[index].Cells[3].Value = 0;
+                    break;
+                }
                 dataGridView1.Rows[index].Cells[1].Value = V[i];
                 dataGridView1.Rows[index].Cells[2].Value = PPa[i];
                 dataGridView1.Rows[index].Cells[3].Value = Pcha[i];
-                
+             
+
             }
            
         }
 
         private void Form15_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using 石油专家管理系统.forms;
+using 石油专家管理系统.Calcuation;
 
 namespace 石油专家管理系统
 {
@@ -129,18 +130,39 @@ namespace 石油专家管理系统
             {
                 if (x == "定向井")
                 {
-
+                    WellTrace well = new WellTrace(textBox1.Text);
+                    well.readWellTraceDatafromDB(textBox1.Text);
+                    well.wellTrace_XYZ(300);
+                    double[,]tw= well.getTw();
+                    int NT = 300;
+                    double[] shen = well.getShen();
+                    double[] alfa = well.getAlfa();
+                    double[] fai = well.getFai();
+                    double dens = 0;
+                    double hg = 0;
+                    string result = Fluidtype.drilling.JudeEarthTypeUnderQiXiaZuan(textBox1.Text, x, x2, x3, x4, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), x9, x5, x6, x8, x7, tw, NT, ref dens);
+                    MessageBox.Show(dens.ToString());
+                    if (radioButton2.Checked)
+                    {
+                        Form7 fro = new Form7(result, x, textBox1.Text, x2, x3, x10, x8, x9, x5, x4, x11, x12, x13, x14, x15, x6, x16, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), dens, x17, x18, tw, no, x7, hg,shen,alfa,fai);
+                        this.Close();
+                        fro.Show();
+                        this.Dispose();
+                    }
                 }
                 else
                 {
                     double[,] tw = { };
                     double dens = 0;
                     double hg = 0;
+                    double[] shen = { };
+                    double[] alfa = { };
+                    double[] fai = { };
                     string result = Fluidtype.drilling.JudeEarthTypeUnderQiXiaZuan(textBox1.Text, x, x2, x3, x4, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), x9, x5, x6, x8, x7, tw, 0, ref dens);
                     MessageBox.Show(dens.ToString());
                     if (radioButton2.Checked)
                     {
-                        Form7 fro = new Form7(result, x, textBox1.Text, x2, x3, x10, x8, x9, x5, x4, x11, x12, x13, x14, x15, x6, x16, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), dens, x17, x18, tw, no, x7,hg);
+                        Form7 fro = new Form7(result, x, textBox1.Text, x2, x3, x10, x8, x9, x5, x4, x11, x12, x13, x14, x15, x6, x16, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), dens, x17, x18, tw, no, x7,hg, shen, alfa, fai);
                         this.Close();
                         fro.Show();
                         this.Dispose();
@@ -151,18 +173,38 @@ namespace 石油专家管理系统
             {
                 if (x == "定向井")
                 {
-
+                    WellTrace well = new WellTrace(textBox1.Text);
+                    well.wellTrace_XYZ(300);
+                    double[,] tw = well.getTw();
+                    int NT = 300;
+                    double[] shen = well.getShen();
+                    double[] alfa = well.getAlfa();
+                    double[] fai = well.getFai();
+                    double dens = 0;
+                    double hg = 0;
+                    string result = Fluidtype.kongjingqixiazuan.JudeEarthTypeUnderZuanJing2(textBox1.Text, x, x2, x3, x4, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), x9, x5, x6, x8, tw, NT, ref dens, ref hg);
+                    MessageBox.Show(dens.ToString());
+                    if (radioButton2.Checked)
+                    {
+                        Form7 fro = new Form7(result, x, textBox1.Text, x2, x3, x10, x8, x9, x5, x4, x11, x12, x13, x14, x15, x6, x16, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), dens, x17, x18, tw, no, x7, hg, shen, alfa, fai);
+                        this.Close();
+                        fro.Show();
+                        this.Dispose();
+                    }
                 }
                 else
                 {
                     double[,] tw = { };
                     double dens = 0;
                     double hg = 0;
+                    double[] shen = { };
+                    double[] alfa = { };
+                    double[] fai = { };
                     string result = Fluidtype.kongjingqixiazuan.JudeEarthTypeUnderZuanJing2(textBox1.Text, x, x2, x3, x4, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), x9, x5, x6, x8, tw, 0, ref dens,ref hg);
                     MessageBox.Show(dens.ToString());
                     if (radioButton2.Checked)
                     {
-                          Form7 fro = new Form7(result, x, textBox1.Text, x2, x3, x10, x8, x9, x5, x4, x11, x12, x13, x14, x15, x6, x16, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), dens, x17, x18, tw, no, x7,hg); 
+                          Form7 fro = new Form7(result, x, textBox1.Text, x2, x3, x10, x8, x9, x5, x4, x11, x12, x13, x14, x15, x6, x16, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), dens, x17, x18, tw, no, x7,hg, shen, alfa, fai); 
                         this.Close();
                           fro.Show();
                           this.Dispose();

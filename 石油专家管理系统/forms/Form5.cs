@@ -114,107 +114,223 @@ namespace 石油专家管理系统
         
             if (temp==1)
             {
-                if(no=="空井"&&name=="工程"||no=="起下钻"&&name=="工程")
+
+                if(xx=="直井")
                 {
-                    string s6 = "select 外径 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
-                    string s16 = "select 壁厚 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
-                    string s7 = "select sum(长度) 总长 from [dbo].[Sheet4$] where 工程编号='" + yy + "' ";
-                    DataSet read6 = SQLHelper.read(s6);
-                    DataSet read7 = SQLHelper.read(s7);
-                    DataSet read16 = SQLHelper.read(s16);
-                    douZgOutterDiameter = Convert.ToDouble(read6.Tables[0].Rows[0]["外径"]);
-                    ztl = Convert.ToDouble(read7.Tables[0].Rows[0]["总长"]);
-                    douZgWallThickness = Convert.ToDouble(read16.Tables[0].Rows[0]["壁厚"]);
-                    EngMethod me = new EngMethod(yy, xx, dep, tgxDep, douWellTemp, douTgDiameter, douZtSize, douWellEyeKDL, douZjyDensity, douZjyPL, douDrZWL, douDbsWellDepth, douDbsTaoya, douDbsPL, douZgOutterDiameter,
-                   douZgWallThickness, pd, pa, vgain, companyName, drillingCrewName, tw, shen, alfa, fai, 0, ss, dens);
-                    me.plumbWell(ss, dens);
-                    double Q = me.getQ();//压井排量
-                    double pp = me.getPP();//地层压力
-                    double pm1 = me.getPm1();//压井泥浆密度
-                    double pti = me.getPti();//初始循环压力
-                    double ptf = me.getPtf();//终了循环压力
-                    double pamax = me.getPamax();//最大套压
-                    double vgainmax = me.getVgainmax();//泥浆池最大增量
-                    double ovtime = me.getOvtime();//溢流到井口时间
-                    double shigongTime = me.getShigongTime();//压井施工时间-------------------------------输出数据7
-                    double[] pax = me.getpax();
-                    double[] pitgain = me.getpitgain();
-                    double[] circulatingtime = me.getcircu();
-                    double[] ptime = me.getptime();
-                    double[] pdd = me.getpdd();
-                    Form11 f = new Form11(Q, pp, pm1, pti, ptf, pamax, vgainmax, ovtime, shigongTime, pax, pitgain, circulatingtime, ptime, pdd); this.Close();
-                    f.Show();
-                    this.Dispose();
-                }
-                if(no=="空井"&& name=="司钻"|| no == "起下钻" && name == "司钻")
-                {
-                   
-                    string s6 = "select 外径 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
-                    string s16 = "select 壁厚 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
-                    string s7 = "select sum(长度) 总长 from [dbo].[Sheet4$] where 工程编号='" + yy + "' ";
-                    DataSet read6 = SQLHelper.read(s6);
-                    DataSet read7 = SQLHelper.read(s7);
-                    DataSet read16 = SQLHelper.read(s16);
-                    douZgOutterDiameter = Convert.ToDouble(read6.Tables[0].Rows[0]["外径"]);
-                    ztl = Convert.ToDouble(read7.Tables[0].Rows[0]["总长"]);
-                    douZgWallThickness = Convert.ToDouble(read16.Tables[0].Rows[0]["壁厚"]);
-                    double D = douZtSize * (douWellEyeKDL + 1);
-                    string lo = "select 内径 from [dbo].[Sheet4$] where 工程编号='" + yy + "' and 钻具名称 ='钻杆'";
-                    DataSet n = SQLHelper.read(lo);
-                    string lo2 = "select 外径  from [dbo].[Sheet4$] where 工程编号='" + yy + "' and 钻具名称 ='钻杆'";
-                    string lo3 = "select 长度 from [dbo].[Sheet4$] where 工程编号='" + yy + "' and 钻具名称 ='钻杆'";
-                    DataSet n2 = SQLHelper.read(lo2);
-                    DataSet n3 = SQLHelper.read(lo3);
-                    List<double> ZJI = new List<double>();
-                    List<double> ZJO = new List<double>();
-                    List<double> ZJL = new List<double>();
-                    for (int i = 0; i < n.Tables[0].Rows.Count; i++)
+                    if (no == "空井" && name == "工程" || no == "起下钻" && name == "工程")
                     {
-                        ZJL.Add(Convert.ToDouble(n3.Tables[0].Rows[i]["长度"]));
-                        ZJI.Add(Convert.ToDouble(n.Tables[0].Rows[i]["内径"]));
-                        ZJO.Add(Convert.ToDouble(n2.Tables[0].Rows[i]["外径"]));
+                        string s6 = "select 外径 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
+                        string s16 = "select 壁厚 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
+                        string s7 = "select sum(长度) 总长 from [dbo].[Sheet4$] where 工程编号='" + yy + "' ";
+                        DataSet read6 = SQLHelper.read(s6);
+                        DataSet read7 = SQLHelper.read(s7);
+                        DataSet read16 = SQLHelper.read(s16);
+                        douZgOutterDiameter = Convert.ToDouble(read6.Tables[0].Rows[0]["外径"]);
+                        ztl = Convert.ToDouble(read7.Tables[0].Rows[0]["总长"]);
+                        douZgWallThickness = Convert.ToDouble(read16.Tables[0].Rows[0]["壁厚"]);
+                        EngMethod me = new EngMethod(yy, xx, dep, tgxDep, douWellTemp, douTgDiameter, douZtSize, douWellEyeKDL, douZjyDensity, douZjyPL, douDrZWL, douDbsWellDepth, douDbsTaoya, douDbsPL, douZgOutterDiameter,
+                       douZgWallThickness, pd, pa, vgain, companyName, drillingCrewName, tw, shen, alfa, fai, 0, ss, dens);
+                        me.plumbWell(ss, dens);
+                        double Q = me.getQ();//压井排量
+                        double pp = me.getPP();//地层压力
+                        double pm1 = me.getPm1();//压井泥浆密度
+                        double pti = me.getPti();//初始循环压力
+                        double ptf = me.getPtf();//终了循环压力
+                        double pamax = me.getPamax();//最大套压
+                        double vgainmax = me.getVgainmax();//泥浆池最大增量
+                        double ovtime = me.getOvtime();//溢流到井口时间
+                        double shigongTime = me.getShigongTime();//压井施工时间-------------------------------输出数据7
+                        double[] pax = me.getpax();
+                        double[] pitgain = me.getpitgain();
+                        double[] circulatingtime = me.getcircu();
+                        double[] ptime = me.getptime();
+                        double[] pdd = me.getpdd();
+                        Form11 f = new Form11(Q, pp, pm1, pti, ptf, pamax, vgainmax, ovtime, shigongTime, pax, pitgain, circulatingtime, ptime, pdd); this.Close();
+                        f.Show();
+                        this.Dispose();
                     }
-                    int nt2 = n.Tables[0].Rows.Count;
-                    SZmethod sz = new SZmethod();
-                    sz.SZMethod(yy, yy, xx, ss, ZJI, ZJO, ZJL, nt2);
-                    double pc = douDbsTaoya / douDbsWellDepth;
-                    sz.SZF(pd, pa, vgain, douZjyDensity, douZjyPL, dep, tgxDep, x1, x2, 0, D, douZtSize, douDrZWL, douWellTemp, pc);
+                    if (no == "空井" && name == "司钻" || no == "起下钻" && name == "司钻")
+                    {
 
-                    double Q = sz.getQyj();//压井排量
-                    double pp = sz.getPp();//地层压力
-                    double pm1 = sz.getyjden();//压井泥浆密度
-                    double pti = sz.getPti();//初始循环压力
-                    double ptf = sz.getPtf();//终了循环压力
-                    double pamax = sz.getpamax();//最大套压
-                                                 // double vgainmax = sz.getVgainmax();//泥浆池最大增量
-                    double pyx = sz.getPyx();//井口最大允许套压
-                    double ovtime = sz.getOvtime();//溢流到井口时间
-                    double shigongTime = sz.getShigongTime();//压井施工时间-------------------------------输出数据7
-                    double[] pat = sz.getPat();
-                    double[] pdt = sz.getPdt();
-                    double[] tyjp = sz.gettyjp();
-                    double[] tyjd = sz.gettyjd();
+                        string s6 = "select 外径 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
+                        string s16 = "select 壁厚 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
+                        string s7 = "select sum(长度) 总长 from [dbo].[Sheet4$] where 工程编号='" + yy + "' ";
+                        DataSet read6 = SQLHelper.read(s6);
+                        DataSet read7 = SQLHelper.read(s7);
+                        DataSet read16 = SQLHelper.read(s16);
+                        douZgOutterDiameter = Convert.ToDouble(read6.Tables[0].Rows[0]["外径"]);
+                        ztl = Convert.ToDouble(read7.Tables[0].Rows[0]["总长"]);
+                        douZgWallThickness = Convert.ToDouble(read16.Tables[0].Rows[0]["壁厚"]);
+                        double D = douZtSize * (douWellEyeKDL + 1);
+                        string lo = "select 内径 from [dbo].[Sheet4$] where 工程编号='" + yy + "' and 钻具名称 ='钻杆'";
+                        DataSet n = SQLHelper.read(lo);
+                        string lo2 = "select 外径  from [dbo].[Sheet4$] where 工程编号='" + yy + "' and 钻具名称 ='钻杆'";
+                        string lo3 = "select 长度 from [dbo].[Sheet4$] where 工程编号='" + yy + "' and 钻具名称 ='钻杆'";
+                        DataSet n2 = SQLHelper.read(lo2);
+                        DataSet n3 = SQLHelper.read(lo3);
+                        List<double> ZJI = new List<double>();
+                        List<double> ZJO = new List<double>();
+                        List<double> ZJL = new List<double>();
+                        for (int i = 0; i < n.Tables[0].Rows.Count; i++)
+                        {
+                            ZJL.Add(Convert.ToDouble(n3.Tables[0].Rows[i]["长度"]));
+                            ZJI.Add(Convert.ToDouble(n.Tables[0].Rows[i]["内径"]));
+                            ZJO.Add(Convert.ToDouble(n2.Tables[0].Rows[i]["外径"]));
+                        }
+                        int nt2 = n.Tables[0].Rows.Count;
+                        SZmethod sz = new SZmethod();
+                        sz.SZMethod(yy, yy, xx, ss, ZJI, ZJO, ZJL, nt2);
+                        double pc = douDbsTaoya / douDbsWellDepth;
+                        sz.SZF(pd, pa, vgain, douZjyDensity, douZjyPL, dep, tgxDep, x1, x2, 0, D, douZtSize, douDrZWL, douWellTemp, pc);
 
-                    Form11 ff = new Form11(Q, pp, pm1, pti, ptf, pamax, pyx, ovtime, shigongTime, pat, pdt, tyjp, tyjd);
-                    ff.Show();
-                    this.Close();
-                    this.Dispose();
-                }
+                        double Q = sz.getQyj();//压井排量
+                        double pp = sz.getPp();//地层压力
+                        double pm1 = sz.getyjden();//压井泥浆密度
+                        double pti = sz.getPti();//初始循环压力
+                        double ptf = sz.getPtf();//终了循环压力
+                        double pamax = sz.getpamax();//最大套压
+                                                     // double vgainmax = sz.getVgainmax();//泥浆池最大增量
+                        double pyx = sz.getPyx();//井口最大允许套压
+                        double ovtime = sz.getOvtime();//溢流到井口时间
+                        double shigongTime = sz.getShigongTime();//压井施工时间-------------------------------输出数据7
+                        double[] pat = sz.getPat();
+                        double[] pdt = sz.getPdt();
+                        double[] tyjp = sz.gettyjp();
+                        double[] tyjd = sz.gettyjd();
 
-                if (no == "起下钻" && (name != "工程" && name != "司钻"))
+                     //   Form11 ff = new Form11(Q, pp, pm1, pti, ptf, pamax, pyx, ovtime, shigongTime, pat, pdt, tyjp, tyjd);
+                    //    ff.Show();
+                        this.Close();
+                        this.Dispose();
+                    }
+
+                    if (no == "起下钻" && (name != "工程" && name != "司钻"))
+                    {
+
+                        double T1 = 0;
+                        double Tz = 0;
+                        double pp = 0;
+                        double Pd0 = 0;
+                        double Pd1 = 0;
+                        int NT1 = 0;//定向井数据
+                        EngMethod me = new EngMethod(yy, xx, dep, tgxDep, douWellTemp, douTgDiameter, douZtSize, douWellEyeKDL, douZjyDensity, douZjyPL, douDrZWL, douDbsWellDepth, douDbsTaoya, douDbsPL, douZgOutterDiameter,
+                   douZgWallThickness, pd, pa, vgain, companyName, drillingCrewName, tw, shen, alfa, fai, 0, ss, dens);
+                        me.EngMethod_QiXiaZuan_Big(NT1, userdens, ztl, ref Qyj, ref T1, ref Tz, ref pp, ref Pd0, ref Pd1);
+                        MessageBox.Show(Qyj.ToString() + " " + T1.ToString());
+                    }
+                }/*
+                else
                 {
-                   
-                    double T1 = 0;
-                    double Tz = 0;
-                    double pp = 0;
-                    double Pd0 = 0;
-                    double Pd1 = 0;
-                    int NT1 = 0;//定向井数据
-                    EngMethod me = new EngMethod(yy, xx, dep, tgxDep, douWellTemp, douTgDiameter, douZtSize, douWellEyeKDL, douZjyDensity, douZjyPL, douDrZWL, douDbsWellDepth, douDbsTaoya, douDbsPL, douZgOutterDiameter,
-               douZgWallThickness, pd, pa, vgain, companyName, drillingCrewName, tw, shen, alfa, fai, 0, ss, dens);
-                    me.EngMethod_QiXiaZuan_Big(NT1, userdens, ztl, ref Qyj, ref T1, ref Tz, ref pp, ref Pd0, ref Pd1);
-                    MessageBox.Show(Qyj.ToString() + " " + T1.ToString());
-                }
+                    if (no == "空井" && name == "工程" || no == "起下钻" && name == "工程")
+                    {
+                        string s6 = "select 外径 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
+                        string s16 = "select 壁厚 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
+                        string s7 = "select sum(长度) 总长 from [dbo].[Sheet4$] where 工程编号='" + yy + "' ";
+                        DataSet read6 = SQLHelper.read(s6);
+                        DataSet read7 = SQLHelper.read(s7);
+                        DataSet read16 = SQLHelper.read(s16);
+                        douZgOutterDiameter = Convert.ToDouble(read6.Tables[0].Rows[0]["外径"]);
+                        ztl = Convert.ToDouble(read7.Tables[0].Rows[0]["总长"]);
+                        douZgWallThickness = Convert.ToDouble(read16.Tables[0].Rows[0]["壁厚"]);
+                        EngMethod me = new EngMethod(yy, xx, dep, tgxDep, douWellTemp, douTgDiameter, douZtSize, douWellEyeKDL, douZjyDensity, douZjyPL, douDrZWL, douDbsWellDepth, douDbsTaoya, douDbsPL, douZgOutterDiameter,
+                       douZgWallThickness, pd, pa, vgain, companyName, drillingCrewName, tw, shen, alfa, fai, 0, ss, dens);
+                        me.directionWell(ss, dens,tw,shen,alfa,fai,NT);
+                        double Q = me.getQ();//压井排量
+                        double pp = me.getPP();//地层压力
+                        double pm1 = me.getPm1();//压井泥浆密度
+                        double pti = me.getPti();//初始循环压力
+                        double ptf = me.getPtf();//终了循环压力
+                        double pamax = me.getPamax();//最大套压
+                        double vgainmax = me.getVgainmax();//泥浆池最大增量
+                        double ovtime = me.getOvtime();//溢流到井口时间
+                        double shigongTime = me.getShigongTime();//压井施工时间-------------------------------输出数据7
+                        double[] pax = me.getpax();
+                        double[] pitgain = me.getpitgain();
+                        double[] circulatingtime = me.getcircu();
+                        double[] ptime = me.getptime();
+                        double[] pdd = me.getpdd();
+                        Form11 f = new Form11(Q, pp, pm1, pti, ptf, pamax, vgainmax, ovtime, shigongTime, pax, pitgain, circulatingtime, ptime, pdd); this.Close();
+                        f.Show();
+                        this.Dispose();
+                    }
+                    if (no == "空井" && name == "司钻" || no == "起下钻" && name == "司钻")
+                    {
+
+                        string s6 = "select 外径 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
+                        string s16 = "select 壁厚 from [dbo].[Sheet4$] where 工程编号='" + yy + "'and 钻具名称='钻杆'";
+                        string s7 = "select sum(长度) 总长 from [dbo].[Sheet4$] where 工程编号='" + yy + "' ";
+                        DataSet read6 = SQLHelper.read(s6);
+                        DataSet read7 = SQLHelper.read(s7);
+                        DataSet read16 = SQLHelper.read(s16);
+                        douZgOutterDiameter = Convert.ToDouble(read6.Tables[0].Rows[0]["外径"]);
+                        ztl = Convert.ToDouble(read7.Tables[0].Rows[0]["总长"]);
+                        douZgWallThickness = Convert.ToDouble(read16.Tables[0].Rows[0]["壁厚"]);
+                        double D = douZtSize * (douWellEyeKDL + 1);
+                        string lo = "select 内径 from [dbo].[Sheet4$] where 工程编号='" + yy + "' and 钻具名称 ='钻杆'";
+                        DataSet n = SQLHelper.read(lo);
+                        string lo2 = "select 外径  from [dbo].[Sheet4$] where 工程编号='" + yy + "' and 钻具名称 ='钻杆'";
+                        string lo3 = "select 长度 from [dbo].[Sheet4$] where 工程编号='" + yy + "' and 钻具名称 ='钻杆'";
+                        DataSet n2 = SQLHelper.read(lo2);
+                        DataSet n3 = SQLHelper.read(lo3);
+                        List<double> ZJI = new List<double>();
+                        List<double> ZJO = new List<double>();
+                        List<double> ZJL = new List<double>();
+                        for (int i = 0; i < n.Tables[0].Rows.Count; i++)
+                        {
+                            ZJL.Add(Convert.ToDouble(n3.Tables[0].Rows[i]["长度"]));
+                            ZJI.Add(Convert.ToDouble(n.Tables[0].Rows[i]["内径"]));
+                            ZJO.Add(Convert.ToDouble(n2.Tables[0].Rows[i]["外径"]));
+                        }
+                        int nt2 = n.Tables[0].Rows.Count;
+                        SZmethod sz = new SZmethod();
+                        sz.SZMethod(yy, yy, xx, ss, ZJI, ZJO, ZJL, nt2);
+                        double pc = douDbsTaoya / douDbsWellDepth;
+                        sz.SZF_wt(pd, pa, vgain, douZjyDensity, douZjyPL, dep, tgxDep, x1, x2, 0, D, douZtSize, douDrZWL, douWellTemp, pc,tw);
+
+                        double Q = sz.getQyj();//压井排量
+                        double pp = sz.getPp();//地层压力
+                        double pm1 = sz.getyjden();//压井泥浆密度
+                        double pti = sz.getPti();//初始循环压力
+                        double ptf = sz.getPtf();//终了循环压力
+                        double pamax = sz.getpamax();//最大套压
+                                                     // double vgainmax = sz.getVgainmax();//泥浆池最大增量
+                        double pyx = sz.getPyx();//井口最大允许套压
+                        double ovtime = sz.getOvtime();//溢流到井口时间
+                        double shigongTime = sz.getShigongTime();//压井施工时间-------------------------------输出数据7
+                        double[] pat = sz.getPat();
+                        double[] pdt = sz.getPdt();
+                        double[] tyjp = sz.gettyjp();
+                        double[] tyjd = sz.gettyjd();
+
+                        Form11 ff = new Form11(Q, pp, pm1, pti, ptf, pamax, pyx, ovtime, shigongTime, pat, pdt, tyjp, tyjd);
+                        ff.Show();
+                        this.Close();
+                        this.Dispose();
+                    }
+                    if (no == "起下钻" && (name != "工程" && name != "司钻"))
+                    {
+
+                        double T1 = 0;
+                        double Tz = 0;
+                        double pp = 0;
+                        double Pd0 = 0;
+                        double Pd1 = 0;
+                        int NT1 = 300;//定向井数据
+                        EngMethod me = new EngMethod(yy, xx, dep, tgxDep, douWellTemp, douTgDiameter, douZtSize, douWellEyeKDL, douZjyDensity, douZjyPL, douDrZWL, douDbsWellDepth, douDbsTaoya, douDbsPL, douZgOutterDiameter,
+                   douZgWallThickness, pd, pa, vgain, companyName, drillingCrewName, tw, shen, alfa, fai, 0, ss, dens);
+                        me.EngMethod_QiXiaZuan_Big(NT1, userdens, ztl, ref Qyj, ref T1, ref Tz, ref pp, ref Pd0, ref Pd1);
+                        MessageBox.Show(Qyj.ToString() + " " + T1.ToString());
+                    }
+
+
+                }*/
+
+
+
+
+
+
+
              
             }
             else
